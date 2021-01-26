@@ -1,0 +1,215 @@
+//==========================================================
+//                        MIXINS
+//==========================================================
+
+// breakpoint mixin
+@mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
+	@if $mq2 == false {
+		@media ($maxmin: $mq01) {
+			@content;
+		}
+	} @else {
+		@media (min-width: $mq01) and (max-width: $mq2) {
+			@content;
+		}
+	}
+}
+
+// responsive font size mixin
+@mixin font-size-map($font-size-map) {
+	@each $breakpoint, $font-size in $font-size-map {
+		@if $breakpoint == null {
+			font-size: em($font-size);
+		} @else {
+			@include breakpoint($breakpoint) {
+				font-size: em($font-size);
+			}
+		}
+	}
+}
+
+
+@mixin overlay-img{
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		z-index: 2;
+		background: rgba($brand-primary, .3);
+		transition: .3s ease;
+	}
+}
+
+
+//--------------------------------------------------------------------------
+//                          TRIANGLE BORDER
+//--------------------------------------------------------------------------
+//
+//  Creates a triangle border
+//
+//  Parameters:
+//      @dir - direction of triangle
+//      @w   - width of triangle
+//      @h:  - height of triangle
+//      @clr - color of triangle
+//
+@mixin triangle($dir, $w, $h, $clr) {
+	width: 0;
+	height: 0;
+	border-style: solid;
+
+	@if $dir == top {
+		border-width: 0 $w/2 $h $w/2;
+		border-color: transparent transparent $clr transparent;
+	}
+	@else if $dir == bottom {
+		border-width: $h $w/2 0 $w/2;
+		border-color: $clr transparent transparent transparent;
+	}
+	@else if $dir == left {
+		border-width: $h/2 $w $h/2 0;
+		border-color: transparent $clr transparent transparent;
+	}
+	@else if $dir == right {
+		border-width: $h/2 0 $h/2 $w;
+		border-color: transparent transparent transparent $clr;
+	}
+	@else if $dir == top_left {
+		border-width: $w $w 0 0;
+		border-color: $clr transparent transparent transparent;
+	}
+	@else if $dir == top_right {
+		border-width: 0 $w $w 0;
+		border-color: transparent $clr transparent transparent;
+	}
+	@else if $dir == bottom_right {
+		border-width: 0 0 $w $w;
+		border-color: transparent transparent $clr transparent;
+	}
+	@else if $dir == bottom_left {
+		border-width: $w 0 0 $w;
+		border-color: transparent transparent transparent $clr;
+	}
+}
+
+
+//----------------------------------------------------------
+//                   Animation
+//----------------------------------------------------------
+// Sets the animation of element
+//
+@mixin animation($anim) {
+	-webkit-animation: $anim;
+	-moz-animation: $anim;
+	-ms-animation: $anim;
+	-o-animation: $anim;
+	animation: $anim;
+}
+
+//----------------------------------------------------------
+//                       Hide Text
+//----------------------------------------------------------
+// Hides the inline text of specified element.
+//
+@mixin hide-text {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+//----------------------------------------------------------
+//                     User Select
+//----------------------------------------------------------
+// Sets the select rule set
+//
+@mixin user-select($select: none) {
+	-webkit-user-select: $select;
+	-khtml-user-select: $select;
+	-moz-user-select: $select;
+	-ms-user-select: $select;
+	user-select: $select;
+}
+
+
+//----------------------------------------------------------
+//                      Clearfix
+//----------------------------------------------------------
+@mixin clearfix{
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		line-height: 0;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+
+//----------------------------------------------------------
+//                     Reset Button
+//----------------------------------------------------------
+// reset the button styles
+
+@mixin reset-button{
+	background: none;
+	border: none;
+	display: inline-block;
+	padding: 0;
+	outline: none;
+	outline-offset: 0;
+	cursor: pointer;
+	-webkit-appearance: none;
+
+	&::-moz-focus-inner {
+		border: none;
+		padding: 0;
+	}
+}
+
+$fa: 'FontAwesome';
+$material: 'material-design';
+$linearicons: 'linearicons';
+
+
+
+//----------------------------------------------------------
+//                     KeyFrames
+//----------------------------------------------------------
+
+@mixin keyframes($name){
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+
+	@-o-keyframes #{$name} {
+		@content;
+	}
+
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+
+
+@mixin list-style-none {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+

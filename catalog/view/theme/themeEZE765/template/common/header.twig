@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]>
+<html dir="{{direction}}" lang="{{lang}}" class="ie8"><![endif]-->
+<!--[if IE 9 ]>
+<html dir="{{direction}}" lang="{{lang}}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+{% if page_direction == 'rtl' %} {% set direction = 'rtl' %} {% endif %}
+<html dir="{{ direction }}" lang="{{ lang }}" class="{{ responsive ? mobile-responsive-off : '' }}">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ title }}</title>
+	<base href="{{ base }}"/>
+	
+	{% if description %}
+		<meta name="description" content="{{ description }}"/>
+	{% endif %}
+	
+	{% if keywords %}
+		<meta name="keywords" content="{{ keywords }}"/>
+	{% endif %}
+	
+	{% for meta in add_this_meta %}
+		<meta property="og:{{ meta.property }}" content="{{ meta.content }}"/>
+	{% endfor %}
+	
+	{# fonts #}
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+	<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="catalog/view/theme/{{ theme_path }}/stylesheet/material-design.css" rel="stylesheet" type="text/css">
+	<link href="catalog/view/theme/{{ theme_path }}/stylesheet/linearicons.css" rel="stylesheet" type="text/css">
+	{# end fonts #}
+	
+	{# styles #}
+	<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+	<link href="catalog/view/theme/{{ theme_path }}/stylesheet/bootstrap-grid-flex.css" rel="stylesheet" media="screen"/>
+	<link href="catalog/view/theme/{{ theme_path }}/stylesheet/photoswipe.css" rel="stylesheet">
+	<link href="catalog/view/theme/{{ theme_path }}/stylesheet/stylesheet.css" rel="stylesheet">
+	<link href="catalog/view/theme/{{ theme_path }}/js/fancybox/jquery.fancybox.css" rel="stylesheet">
+	{# end styles #}
+	{# rtl #}
+	{% if direction == 'rtl' %}
+		<link href="catalog/view/theme/{{ theme_path }}/stylesheet/bootstrap-rtl.css" rel="stylesheet">
+		<link href="catalog/view/theme/{{ theme_path }}/stylesheet/rtl.css" rel="stylesheet">
+	{% endif %}
+	{# end rtl #}
+	{% for style in styles %}
+		<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}"/>
+	{% endfor %}
+	
+	{% for link in links %}
+		<link href="{{ link.href }}" rel="{{ link.rel }}"/>
+	{% endfor %}
+	
+	<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="catalog/view/javascript/jquery/swiper/js/swiper.min.js" type="text/javascript"></script>
+	
+	{% for script in scripts %}
+		<script src="{{ script }}" type="text/javascript"></script>
+	{% endfor %}
+	
+	<script src="catalog/view/theme/{{ theme_path }}/js/common.js" type="text/javascript"></script>
+	
+	{% if color_scheme_link %}
+		<link id="color_scheme" href="{{ color_scheme_link }}" rel="stylesheet">
+	{% endif %}
+	
+	{% for analytic in analytics %}
+		{{ analytic }}
+	{% endfor %}
+</head>
+<body>
+<p id="gl_path" class="hidden">{{ theme_path }}</p>
+<div id="page">
+	<div id="page-preloader" class="visible">
+		<div class="page-preloader__cnt">
+			<div class="preloader"></div>
+		</div>
+	</div>
+	<div class="ie-warning">
+		<a href="//windows.microsoft.com/en-us/internet-explorer/download-ie">
+			<img src="catalog/view/theme/{{ theme_path }}/image/warning_bar_0000_us.jpg" height="75" width="1170" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+		</a>
+	</div>
+	<header>
+		{% if header_top %}
+			{{ header_top }}
+		{% endif %}
+		{% if navigation %}
+			{#<div class="stuck-menu"> #}{# id="stuck" #}
+			<div class="navigation">
+				{{ navigation }}
+			</div>
+			{#</div>#}
+		{% endif %}
+	</header>
+	{# {{menu}} #}
+	

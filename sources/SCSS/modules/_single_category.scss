@@ -1,0 +1,139 @@
+.single-category {
+  .row {
+    > .product-layout {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  margin-bottom: 50px;
+  @media (min-width: 1200px) {
+    margin-bottom: 130px;
+  }
+}
+
+
+.single-category_tabs {
+  .box-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav > li > a {
+    padding: 8px 9px;
+  }
+  
+  .nav-tabs {
+    border-bottom: none;
+    position: relative;
+    margin-bottom: 0;
+    > li {
+      margin-bottom: 0;
+      border:none;
+      > a {
+        font-size: 18px;
+        margin-right: 0;
+        margin-left: 0;
+        border-radius: 0;
+        border:none;
+        letter-spacing: 0.2em;
+        color: $baseColor;
+        font-weight: bold;
+        background: transparent;
+        &:hover, &:focus {
+          color: $secondary;
+          background: inherit;
+        }
+      }
+    }
+    li.active {
+      border:none;
+      > a,  > a:hover, > a:focus{
+        color: $secondary;
+        border:none;
+      }
+    }
+  }
+  .tab-content {
+    border-top: 2px solid $dark;
+    padding-top: 28px;
+  }
+}
+
+.homebuilder {
+  .single-category {
+    width: 100%;
+    display: inline-block;
+    
+
+    .product-section-title {
+      margin-top: 0;
+      line-height: 1;
+    }
+    
+    .box-content {
+      > .box-heading {
+        text-align: center;
+        + * {
+          margin-top: 40px;
+        }
+      }
+    }
+    
+    .product-layout {
+      margin-bottom: 0;
+    }
+  }
+  .products + .view-all {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .single-category_tabs {
+    .box-heading {
+      display: block;
+    }
+    .nav-tabs {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      > li {
+        padding-left: 10px;
+        float: none;
+        > a {
+          font-size: 14px;
+          line-height: 14px;
+          padding: 5px;
+          margin-right: 0;
+          margin-left: 0;
+          border-width: 0;
+        }
+        + li {
+          margin-left: 8px;
+        }
+      }
+      li.active {
+        > a, > a:focus, > a:hover {
+          border: none;
+        }
+      }
+    }
+    .tab-content {
+      border-top: none;
+      padding-top: 23px;
+    }
+  }
+  
+  .single-category {
+    margin-bottom: 0;
+    > .box-heading {
+      display: none;
+    }
+    .mobile-carousel {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

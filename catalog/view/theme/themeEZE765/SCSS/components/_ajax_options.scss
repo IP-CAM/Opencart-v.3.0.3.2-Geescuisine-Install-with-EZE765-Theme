@@ -1,0 +1,72 @@
+/* ===================   Product Ajax Overlay Options   =================== */
+
+.ajax-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  z-index: 997;
+  &.visible {
+    opacity: 1;
+    background: rgba(#000, .7);
+    visibility: visible;
+  }
+  .product-options {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 450px;
+    min-width: 300px;
+    padding-bottom: 0;
+    border-bottom: none;
+    max-height: 80%;
+    backface-visibility: hidden;
+    h3 {
+      margin-top: 0;
+    }
+    .col-sm-8 {
+      text-align: left;
+    }
+    .options {
+      padding: 20px;
+      background: #FFF;
+      text-align: center;
+      .form-group {
+        text-align: left;
+      }
+    }
+    
+    .ajax-overlay_close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 16px;
+      color: rgba(#000, .5);
+      font-family: $material;
+      &:before {
+        content: '\e054';
+      }
+      &:hover {
+        color: #000;
+      }
+    }
+    .checkbox label:before {
+      background: darken($stockBg, 5%);
+    }
+  }
+  .product-option-wrap {
+    text-align: center;
+    height: 100%;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+}
+

@@ -1,0 +1,17 @@
+{% for banner in banners %}
+    <div id="banner-{{ module }}_{{ loop.index }}" class="banner {{ class }} col-12 col-sm">
+        <div class="banner-box {{ class }}_{{ module }}_{{ loop.index }}">
+            {% if (banner['link']) %}
+               <a class="banner-link" href="{{ banner['link'] }}"></a>
+            {% endif %}
+            <img src="{{ banner['image'] }}" alt="{{ banner['title'] }}" class="img-responsive banner-img"/>
+              <div class="banner-desc">
+                {% if (banner['description']) %}
+                    <div class="s-desc">
+                       <div class="description">{{ banner['description'] }}</div>
+                    </div>
+                {% endif %}
+              </div>
+        </div>
+    </div>
+{% endfor %}

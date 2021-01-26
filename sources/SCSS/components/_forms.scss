@@ -1,0 +1,428 @@
+/*========================================================
+                      Form Styles
+=========================================================*/
+//Input
+$inputBackground: #fff;
+$inputColor: $dark;
+$inputBorderColor:  rgba(#000, .2);
+$inputBorderFocus: #f4f4f4;
+$inputHeight: 45px;
+$inputFontSize: 12px;
+$inputLineHeight: 45px;
+$inputBorderRadius: 0;
+$inputPadding: (($inputHeight - $inputLineHeight)/2) 10px (($inputHeight - $inputLineHeight)/2) 33px;
+
+//Select Arrow
+$select-arrow-width: 30px;
+$select-arrow-icon: '\ec3a';
+
+// Radio
+$radio-lheight: 14px;
+$radio-size: 14px;
+$radio-border: none;
+$radio-background: #f3f4f5;
+
+$radio-inner-size: 10px;
+$radio-inner-bg: $brand-primary;
+
+//Checkbox
+$checkbox-size: 14px;
+$checkbox-bg: $gray-300;
+$checkbox-border: none;
+$checkbox-border-radius: $baseBorderRadius;
+
+$checkbox-icon: '\f00c';
+$checkbox-icon-color: $brand-primary;
+
+//==============================
+// Input  Styles
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: block;
+  width: 100%;
+  background: $inputBackground;
+  border: 1px solid $inputBorderColor;
+  color: $inputColor;
+  font-size: $inputFontSize;
+  height: $inputHeight;
+  line-height: $inputLineHeight;
+  padding: $inputPadding;
+  outline: none;
+  font-family: $secondaryFontFamily;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  border-radius: $inputBorderRadius;
+  transition: .3s all ease;
+  box-shadow: none;
+  appearance: none;
+  &:focus {
+    box-shadow: 1px 1px 10px $inputBorderFocus;
+
+  }
+}
+
+@media (min-width: 768px) {
+  select {
+    &:focus {
+      border-bottom: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  select {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+input.form-control:focus {
+  border-color: $inputBorderColor;
+}
+
+.product-options {
+  .checkbox input[type="checkbox"],
+  .radio input[type="radio"] {
+    + label:before {
+      border: 1px solid $gray-300;
+    }
+  }
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+.option-select, .sbOptions {
+  [rel=''], [value=''] {
+    display: none;
+  }
+}
+
+.input-group .form-control:first-child {
+  @media (max-width: 768px) {
+    width: 40px;
+  }
+}
+
+input[name*="quantity"] {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: middle;
+  @media (max-width: 768px) {
+    width: 40px !important;
+  }
+}
+
+input[name="captcha"] {
+  + img {
+    margin-top: 15px;
+  }
+}
+
+textarea:not([class*="habla"]) {
+  min-height: 200px;
+}
+
+select {
+  display: none;
+}
+
+#modal-shipping {
+  input[type="radio"] {
+    display: inline;
+    float: left;
+    margin-top: 5px;
+  }
+  @media (max-width: 479px) {
+    .btn, #button-shipping {
+      margin-top: 5px;
+    }
+  }
+}
+
+.counter {
+  display: inline-block;
+  height: $inputHeight;
+  width: $inputHeight;
+  color: $dark;
+  background: $inputBackground;
+  line-height: $inputHeight;
+  text-align: center;
+  font-size: 20px;
+  vertical-align: middle;
+  &:hover {
+    color: $brand-primary;
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+#product .counter {
+  @media (max-width: 767px) {
+    display: inline-block;
+  }
+}
+
+.input-group-btn .btn {
+  height: $inputHeight;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+//==============================
+// Select Styles
+
+.option-select {
+  .sbHolder {
+    width: 170px;
+    display: inline-block;
+  }
+  label.control-label {
+    vertical-align: middle;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
+}
+
+.product-option-wrap {
+  .option-select {
+    .control-label {
+      margin-bottom: 10px;
+    }
+    @media (min-width: 1200px) {
+      display: flex;
+      align-items: center;
+      .control-label {
+        width: 103px;
+        margin-bottom: 0;
+      }
+    }
+    .sbHolder {
+      width: 210px;
+    }
+  }
+}
+
+.sbHolder {
+  background-color: $inputBackground;
+  border: 1px solid $inputBorderColor;
+  height: $inputHeight;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  color: $inputColor;
+  border-radius: $inputBorderRadius;
+  transition: .3s all ease;
+  min-width: 120px;
+  &:hover {
+    background: $inputBorderFocus;
+  }
+  &:focus {
+    box-shadow: 2px 2px 10px $dark;
+  }
+}
+
+.sbSelector {
+  display: block;
+  height: 100%;
+  line-height: $inputLineHeight;
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: $select-arrow-width;
+  padding: (($inputHeight - $inputLineHeight)/2) 5px (($inputHeight - $inputLineHeight)/2) 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &:hover {
+    color: inherit;
+  }
+}
+
+//==============================
+// Select Arrow Styles
+
+.sbToggle {
+  display: block;
+  height: 100%;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $select-arrow-width;
+  text-align: center;
+  color: #2b2b2b;
+  font-family: 'Linearicons';
+  line-height: $inputHeight;
+  font-size: 16px;
+  &:before {
+    content: $select-arrow-icon;
+    font-family: 'Linearicons';
+    display: block;
+    line-height: inherit;
+    transition: .5s all ease;
+  }
+  &:hover {
+    color: $brand-primary;
+  }
+  .sbToggleOpen {
+    &:before {
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+.sbHolderDisabled {
+  background-color: #3C3C3C;
+  border: solid 1px #515151;
+}
+
+//==============================
+// Select Dropdown Styles
+
+.sbOptions {
+  background-color: $inputBackground;
+  list-style: none;
+  left: -1px;
+  margin: 0;
+  padding: 10px 0;
+  position: absolute;
+  right: 0;
+  overflow-y: auto;
+  border: 1px solid $dark;
+  outline: none;
+  z-index: 3;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  width: inherit;
+  li {
+    a {
+      display: block;
+      padding: 8px 20px 8px 10px;
+      color: $inputColor;
+      &:hover {
+        color: $baseColor;
+        background: $inputBorderFocus;
+      }
+    }
+  }
+}
+
+//==============================
+// Radio Styles
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  position: relative;
+  padding-left: 22px;
+  line-height: $radio-lheight;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+  }
+  &:before {
+    top: ($radio-lheight - $radio-size)/2;
+    left: 0;
+    width: $radio-size;
+    height: $radio-size;
+    border: $radio-border;
+    background: $radio-background;
+  }
+  &:after {
+    top: (($radio-size - $radio-inner-size)/2) + ($radio-lheight - $radio-size)/2;
+    left: (($radio-size - $radio-inner-size)/2);
+    width: $radio-inner-size;
+    height: $radio-inner-size;
+    transition: .3s all ease;
+  }
+}
+
+input[type="radio"]:checked + label:after {
+  background: $radio-inner-bg;
+}
+
+.radio-inline {
+  margin-right: 5px;
+}
+
+//==============================
+// Checkbox Styles
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    top: ($radio-lheight - $checkbox-size)/2;
+    left: 0;
+    width: $checkbox-size;
+    height: $checkbox-size;
+  }
+  &:before {
+    background: $checkbox-bg;
+    border: $checkbox-border;
+    border-radius: $checkbox-border-radius;
+  }
+  &:after {
+    text-align: center;
+    line-height: $checkbox-size;
+    font-family: $fa;
+    color: $checkbox-icon-color;
+  }
+}
+
+input[type="checkbox"]:checked + label:after {
+  content: $checkbox-icon;
+}
+
+input[type="checkbox"][disabled] + label {
+  color: lighten($baseColor, 30%);
+  display: none;
+}
+
+input[type="checkbox"][name="agree"] + label {
+  margin-bottom: $radio-lheight/2;
+  &:before, &:after {
+    top: -4px;
+  }
+}
+
+@media (max-width: 767px) {
+  select {
+    display: block !important;
+    max-width: 210px;
+  }
+  .sbHolder {
+    display: none !important;
+  }
+}

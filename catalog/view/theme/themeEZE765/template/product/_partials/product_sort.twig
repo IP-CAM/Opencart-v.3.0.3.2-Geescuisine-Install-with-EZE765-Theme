@@ -1,0 +1,49 @@
+<div class="product-filter clearfix">
+  <div class="col p-0">
+    <div class="product-filter_elem">
+      <div class="button-view">
+        <button type="button" id="grid-view" data-toggle="tooltip" title="{{ button_grid }}"><i class="material-design-two375"></i></button>
+        <button type="button" id="list-view" data-toggle="tooltip" title="{{ button_list }}"><i class="material-design-view12"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto">
+    <div class="form-group"><a href="{{ compare }}" id="compare-total" class="btn btn-primary"><i class="linearicons-repeat" aria-expanded="true" title="{{ text_compare }}"></i></a></div>
+  </div>
+  <div class="product-filter_elem sort">
+    <label class="control-label" for="input-sort">
+			{{ text_sort }}
+    </label>
+    <select id="input-sort" onchange="location = this.value;">
+			{% for sorts in sorts %}
+				{% if sorts.value == '%s-%s'|format(sort, order) %}
+          <option value="{{ sorts['href'] }}" selected="selected">
+						{{ sorts['text'] }}
+          </option>
+				{% else %}
+          <option value="{{ sorts['href'] }}">
+						{{ sorts['text'] }}
+          </option>
+				{% endif %}
+			{% endfor %}
+    </select>
+  </div>
+  <div class="product-filter_elem show">
+    <label class="control-label" for="input-limit">
+			{{ text_limit }}
+    </label>
+    <select id="input-limit" onchange="location = this.value;">
+			{% for limits in limits %}
+				{% if (limits['value'] == limit) %}
+          <option value="{{ limits['href'] }}" selected="selected">
+						{{ limits['text'] }}
+          </option>
+				{% else %}
+          <option value="{{ limits['href'] }}">
+						{{ limits['text'] }}
+          </option>
+				{% endif %}
+			{% endfor %}
+    </select>
+  </div>
+</div>

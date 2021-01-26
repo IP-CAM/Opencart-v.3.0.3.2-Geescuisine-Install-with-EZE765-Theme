@@ -1,0 +1,74 @@
+#page {
+  background: $contentBg;
+  overflow: hidden;
+}
+
+section.bottom {
+  margin-top: 10px;
+}
+
+
+/*==================  Marked List  ======================*/
+.box.account ul, .box.affilate ul {
+  padding: 0;
+  list-style-type: none;
+  li + li {
+    border-top: 1px solid $borderColor;
+  }
+  a {
+    position: relative;
+    background: $stockBg;
+    display: block;
+    padding: 13px 15px;
+    &:hover {
+      background: $stockBgHover;
+    }
+  }
+  a:hover {
+    color: $brand-primary;
+  }
+}
+
+.manufacturer-content div, #content ul.list-unstyled {
+  margin: 0;
+  list-style-type: none;
+  li + li {
+    margin-top: 10px;
+  }
+  a {
+    position: relative;
+    &:before {
+      content: '\e11d';
+      margin-right: 5px;
+      font-weight: 400;
+      font-size: 20px;
+      font-family: $material;
+      color: $brand-primary;
+    }
+  }
+}
+
+#content .product-info ul.list-unstyled a:before {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  
+  #content {
+    padding-bottom: 30px;
+  }
+  
+  #product-category {
+    #content {
+      padding-top: 0;
+    }
+  }
+  
+  aside {
+    margin-top: 20px;
+    .container {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}

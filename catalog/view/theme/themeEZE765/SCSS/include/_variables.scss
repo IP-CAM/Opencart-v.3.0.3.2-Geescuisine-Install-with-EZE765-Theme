@@ -1,0 +1,72 @@
+//--------------------------------------------------------------
+//                    Variables
+//--------------------------------------------------------------
+
+// breakpoint variables
+
+$xl: 1720px;
+$lg: 1199px;
+$md: 1024px;
+$sm: 767px;
+$xs: 575px;
+
+// Fonts
+$baseFontFamily: 'Open Sans', sans-serif;
+$secondaryFontFamily: 'Roboto Slab', serif;
+$baseFontSize: 14px;
+$baseLineHeight: 1.2;
+$customLineHeight: 18px;
+$baseFont: 400 #{$baseFontSize}/#{$baseLineHeight} $baseFontFamily;
+
+
+
+// typography scale
+$h1-font-size: (null: 94,$xl: 94, $lg: 72, $md: 54, $sm: 32, $xs: 30);
+$h2-font-size: (null: 72,$xl: 72, $lg: 62, $md: 45, $sm: 30, $xs: 28);
+$h3-font-size: (null: 68,$xl: 68, $lg: 40, $md: 30, $sm: 22, $xs: 30);
+$h4-font-size: (null: 40,$xl: 40, $lg: 22, $md: 16, $sm: 14, $xs: 20);
+$h5-font-size: (null: 26,$xl: 26, $lg: 20, $md: 15, $sm: 13, $xs: 18);
+$h6-font-size: (null: 24,$xl: 24, $lg: 18, $md: 13, $sm: 12, $xs: 16);
+$p-font-size: (null: 14,$xl: 14, $lg: 13, $md: 12, $sm: 11, $xs: 12);
+
+
+// Colors
+$baseColor: #636363;
+$gray-300: #F8F8F8;
+$secondary: #DFE3EC;
+$brand-danger: #FF2828;
+$brand-primary: #FFC928;
+$brand-info: #8FC940;
+$white: #fff;
+$dark: #000000;
+$borderColor: #E5E5E5;
+$stockBg: #f7f7f7;
+$light-300: #FFF6F1;
+$black: #414141;
+$stockBgHover: $gray-300;
+$color-orange: $secondary;
+$link-color: $dark;
+
+//Backgrounds
+$contentBg: $white;
+$footerBg: $white;
+$baseBg: $secondary;
+$input-bg: $contentBg;
+
+// Border-radius
+$baseBorderRadius: 0;
+
+//Box Shadow
+$baseBoxShadow: 1px 1px 8px rgba(#000,.15);
+
+
+
+// Colors Themes
+$schemes: (
+	scheme_1 : ( #CFEAEC),
+	scheme_2 : ( #D24A5A),
+	scheme_3 : ( #4AB1D2),
+	scheme_4 : ( #D6BC0B)
+);
+
+

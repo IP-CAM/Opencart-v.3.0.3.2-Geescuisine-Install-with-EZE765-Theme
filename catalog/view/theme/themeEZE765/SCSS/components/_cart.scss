@@ -1,0 +1,242 @@
+/*================ Box Cart  ===============*/
+$close-button-color: $dark;
+
+.box-cart {
+  position: relative;
+    a {
+      text-transform: none;
+  }
+  .btn-danger {
+    margin-top: 5px;
+    border: none;
+  }
+  .btn-danger, .btn-danger:focus {
+    border: 0;
+    padding: 0;
+    color: $dark;
+    font-size: 13px;
+    background: none;
+    &:hover {
+      color: $brand-primary;
+      background: none;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  a:hover img {
+    opacity: .85;
+  }
+  .btn {
+    margin-bottom: 7px;
+  }
+  .name {
+    font-size: 13px;
+    line-height: 1.2;
+    max-width: 135px;
+    text-transform: capitalize;
+  }
+  .toggle_cont {
+    flex-direction: column;
+  }
+  .cart-total2, .cart-total {
+    position: absolute;
+    top: -5px;
+    right: 0;
+  }
+}
+
+/*================  Cart  ===============*/
+.cart {
+  position: relative;
+  > button {
+    line-height: 16px;
+    .cart-total, .cart-total2 {
+      font-size: 14px;
+      transition: 0.3s all ease;
+    }
+    strong, .cart-total2 {
+      display: none;
+    }
+    &:hover, &.active {
+      .cart-total, .cart-total2, i {
+        color: $brand-primary;
+      }
+    }
+  }
+  .cart-remove-btn {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    &:before, > span {
+      vertical-align: middle;
+    }
+    &:before {
+      margin-right: 5px;
+    }
+  }
+}
+
+/*================  Cart DropDown ===============*/
+.cart .toggle_cont {
+  z-index: 1001;
+  min-width: 402px;
+  padding: 30px 29px 10px 30px;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: $dark;
+  font-weight: 500;
+  background: #fff;
+  border: 1px solid $dark;
+  display: none;
+  
+  .table > tbody > tr {
+    > td.text-center {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: right;
+    }
+    > td.text-right {
+      padding-left: 0;
+    }
+  }
+  h3 {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $borderColor;
+  }
+  .image a {
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 5px 10px 0 0;
+    background: #fff;
+  }
+  img {
+    max-width: 72px;
+    background-color: #fff;
+  }
+  table {
+    margin-bottom: 10px;
+  }
+  .btn-primary, .btn-default {
+    margin-bottom: 10px;
+    padding: 7px 20px 8px;
+    float: left;
+  }
+  .btn-default {
+    margin-right: 6px;
+  }
+}
+
+.cart td {
+  font-size: 13px;
+  strong {
+    font-size: 12px;
+  }
+}
+
+.cart {
+  .toggle_cont table.total {
+    margin-top: 13px;
+    margin-bottom: 23px;
+    td {
+      font-size: 12px;
+      border: none;
+      padding: 2px;
+      color: $dark;
+      strong {
+        font-weight: 400;
+      }
+    }
+    tr {
+      &:last-child {
+        td {
+          font-size: 14px;
+          font-weight: 500;
+          padding-top: 10px;
+          strong {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table > tbody > tr > td {
+  padding-bottom: 6px;
+}
+
+.price-cart {
+  color: $dark;
+  display: inline-block;
+  min-width: 85px;
+  padding: 2px 6px 0 0;
+  text-align: left;
+  i {
+    font-size: 10px;
+    font-style: normal;
+  }
+  b {
+    font-weight: 400;
+    margin-left: 5px;
+    float: right;
+  }
+}
+
+.table > tbody > tr > td {
+  border-top: none;
+}
+
+.cart .table.total tr:last-child td strong,
+.cart .table.total tr:last-child td {
+  font-size: 12px;
+  text-transform: uppercase;
+  strong {
+    font-size: 14px;
+    text-transform: none;
+  }
+}
+
+/*-----------------------------------------*/
+
+@media (min-width: 768px) {
+  .cart {
+    display: inline-block;
+    height: 100%;
+    > button {
+      height: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .cart {
+    > button {
+      position: relative;
+      i {
+        margin-right: 10px;
+      }
+      &:hover i {
+        color: $brand-primary;
+      }
+    }
+    .price-cart {
+      min-width: 0;
+    }
+    .toggle_cont {
+      min-width: 300px;
+      max-height: 390px;
+      overflow: auto;
+      right: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

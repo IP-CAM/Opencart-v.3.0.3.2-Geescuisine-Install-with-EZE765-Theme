@@ -1,0 +1,17 @@
+{% if languages|length > 1 %}
+	<form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-language">
+		
+		<ul>
+			{% for language in languages %}
+				<li>
+					<button class="btn-link language-select {% if (language.code == code) %}selected{% endif %} " type="button" name="{{ language.code }}">
+						{{ language.name }}
+					</button>
+				</li>
+			{% endfor %}
+		</ul>
+		
+		<input type="hidden" name="code" value=""/>
+		<input type="hidden" name="redirect" value="{{ redirect }}"/>
+	</form>
+{% endif %}

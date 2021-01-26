@@ -1,0 +1,116 @@
+.zemez-single-product {
+  position: relative;
+  text-align: center;
+  padding-top: 10px;
+  background-color: $gray-300;
+  > .container {
+    padding-left: 0;
+    padding-right: 0;
+    > div {
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    margin-bottom: 30px;
+  }
+  .thumbnail-wrapper {
+    position: relative;
+    
+    [class^='gallery-top'] {
+      img {
+        border: 1px solid transparent;
+        transition: .3s;
+      }
+    }
+    
+    &:hover {
+      [class^='gallery-top'] {
+        img {
+          border-color: $white;
+        }
+      }
+    }
+    
+    .swiper-container {
+      margin-bottom: 0;
+    }
+    .thumbnails {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 5px;
+      display: block;
+      z-index: 2;
+      max-width: 270px;
+      margin-left: auto;
+      margin-right: auto;
+      .swiper-slide-active img {
+        border: 1px solid $white;
+      }
+    }
+  }
+  
+  .caption {
+    text-align: center;
+    padding: 20px 15px;
+    max-width: 422px;
+    margin-left: auto;
+    margin-right: auto;
+    .description {
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 18px;
+      font-family: $baseFontFamily;
+    }
+    
+    * + .description {
+      margin-top: 20px;
+    }
+    .name{
+      color: $dark;
+      margin-top: 10px;
+    }
+    .name > a {
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 16px;
+      color: inherit;
+      @media (min-width: 1399px) {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    
+    .btn {
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      * {
+        display: inline;
+        transition: none;
+        color: inherit;
+      }
+    }
+    * + .btn {
+      margin-top: 30px;
+    }
+    
+  }
+  
+  .swiper-slide-container {
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}

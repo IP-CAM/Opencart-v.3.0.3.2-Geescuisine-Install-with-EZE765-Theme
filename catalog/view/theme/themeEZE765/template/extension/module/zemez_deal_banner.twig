@@ -1,0 +1,35 @@
+<!-- Zemez Deal Banner -->
+<div class="zemez-deal-banner zemez-deal-banner--{{module}}">
+	<div class="zemez-deal-banner__cont">
+		{% if (image) %} 
+		<div class="zemez-deal-banner__image">
+			<img width="{{image_width}}" height="{{image_height}}" src="{{image}}" alt="">
+		</div>
+		{% endif %} 
+		{% if (description) %} 
+		<div class="zemez-deal-banner__description">
+			{{description}} 
+		</div>
+		{% endif %}
+		<div class="zemez-deal-banner__countdown">
+			<div id="zemez-deal-banner__countdown-{{module}}" class="simple-countdown" data-date="{{date}}">
+				<div class="cell days"><span class="number"></span> {{days_title}}</div>
+				<div class="cell hours"><span class="number"></span> {{hours_title}}</div>
+				<div class="cell minutes"><span class="number"></span> {{minutes_title}}</div>
+				<div class="cell seconds"><span class="number"></span> {{seconds_title}}</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		;(function($) {
+			var obj = $('#zemez-deal-banner__countdown-{{module}}');
+			obj.countdown(obj.data('date'), function(event){
+				$(this).find('.days > .number').html(event.strftime('%D'));
+				$(this).find('.hours > .number').html(event.strftime('%H'));
+				$(this).find('.minutes > .number').html(event.strftime('%M'));
+				$(this).find('.seconds > .number').html(event.strftime('%S'));
+			});
+		})(jQuery)
+	</script>
+<!-- END Zemez Deal Banner-->

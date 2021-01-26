@@ -1,0 +1,131 @@
+
+.rd-parallax {
+  position: relative;
+  z-index: 0;
+  
+  
+  .rd-parallax-inner {
+    overflow: hidden;
+    clip: rect(0, auto, auto, 0);
+    position: relative;
+    min-height: 100%;
+  
+    padding-top: 150px;
+    padding-bottom: 184px;
+    @media (min-width: 1200px) {
+      padding-top: 300px;
+      padding-bottom: 267px;
+  
+    }
+    .rd-parallax-layer[data-url] {
+      background-position: center;
+      background-repeat: no-repeat;
+      backface-visibility: hidden;
+      @include overlay-img;
+    }
+    
+    .rd-parallax-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+    }
+    
+  }
+  
+  
+  
+  .parallax_desc {
+    position: absolute;
+    left: auto;
+    right: 12%;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    text-align: left;
+    padding: 25px;
+    max-width: 420px;
+    color: $white;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+      color: $white;
+    }
+    p.h4 {
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+    p.h5 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    p.text {
+      font-weight: 300;
+      color: $white;
+    }
+    .btn {
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      margin-top: 10px;
+    }
+    @media (max-width: 991px) {
+      text-align: center;
+      left:50%;
+      right:auto;
+      transform: translate(-50%, -50%);
+      .h5 {
+        + p {
+          display: none;
+        }
+      }
+    }
+    
+    @media (max-width: 1199px) {
+      * + * {
+        margin-bottom: 5px;
+      }
+      .h5 {
+        + p {
+          font-size: 13px;
+        }
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      p.h4 {
+        font-size: 24px;
+        line-height: 1.35;
+      }
+      p.h5 {
+        font-size: 60px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      .btn {
+        margin-top: 20px;
+        padding: 21px 24px 20px;
+      }
+    }
+  }
+  
+  .container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  
+}
+
+
+
+

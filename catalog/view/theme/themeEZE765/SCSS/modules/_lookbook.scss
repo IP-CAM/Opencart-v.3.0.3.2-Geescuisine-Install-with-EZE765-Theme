@@ -1,0 +1,187 @@
+//--------------------------------------------------------------
+//                    Look Book
+//--------------------------------------------------------------
+.lookbook {
+  .lookbook--banner {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .lookbook__aside {
+    padding: 0;
+  }
+  [data-marker] {
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    > i, .close-btn {
+      width: 15px;
+      height: 15px;
+      background: $secondary;
+      border-radius: 50%;
+      color: #fff;
+      opacity: 1;
+      transition: all .5s ease-in-out;
+      border: 2px solid #fff;
+    }
+    > i {
+      transform: translate(-50%, -50%);
+    }
+    .close-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      transform: translate(50%, -50%);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 25px;
+      z-index: 500;
+      text-align: center;
+      &:hover {
+        background: $dark;
+      }
+    }
+    &.active {
+      > i {
+        opacity: 0;
+      }
+    }
+  }
+  .marker__cnt {
+    z-index: 500;
+    position: absolute;
+    background: #fff;
+    width: 170px;
+    font-size: 15px;
+    line-height: 15px;
+    margin: 30px 15px;
+    display: none;
+    opacity: 0;
+    color: $dark;
+    pointer-events: auto;
+    border: 2px solid $secondary;
+    .name, .price {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 5px;
+    }
+  }
+
+  [data-mapid] {
+    margin-bottom: 30px;
+    &:not(area) {
+      position: relative;
+      img {
+        background: #f7f7f7;
+        margin-bottom: 15px;
+        @media (min-width: 768px)  {
+          float: left;
+          margin-right: 40px;
+          overflow: hidden;
+          margin-bottom: 30px;
+        }
+      }
+      
+      .sale, .new-pr, .discount {
+        display: none;
+      }
+      
+      &.active img {
+        box-shadow: 0 0 0 3px $secondary;
+      }
+      .product-options {
+        line-height: 10px;
+      }
+    }
+  }
+  area[data-mapid] {
+    cursor: pointer;
+  }
+}
+
+.lookbook__aside .name a {
+  display: inline;
+}
+
+.product-lookbook footer {
+  margin-top: 10px;
+}
+
+.product-lookbook-block {
+  display: inline-block;
+  float: left;
+  position: relative;
+  line-height: 0;
+  a {
+    overflow: hidden;
+    display: block;
+    + div {
+      position: absolute;
+      display: inline-block;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+      width: 100%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: bold;
+      text-align: center;
+      pointer-events: none;
+      padding: 20px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    img {
+      transition: all .3s ease;
+    }
+    &:hover {
+      img {
+        opacity: .85;
+      }
+    }
+  }
+  h3 {
+    font-weight: bold;
+    text-transform: none;
+    position: relative;
+    margin-top: 6px;
+    &:after {
+      position: absolute;
+      display: inline-block;
+      bottom: -16px;
+      width: 48px;
+      margin-left: -24px;
+      content: '';
+      left: 50%;
+      height: 2px;
+      background: #fff;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    a + div {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    h3 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+  margin-bottom: 30px;
+}
+
+.lookbook [data-mapid]:not(area) {
+  .product-options img {
+    margin-right: 5px;
+  }
+  &.active .product-options img {
+    box-shadow: none;
+  }
+}

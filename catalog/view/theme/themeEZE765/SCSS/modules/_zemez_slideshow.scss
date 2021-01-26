@@ -1,0 +1,212 @@
+
+.swiper-slider {
+  .swiper-slide {
+    position: relative;
+    
+    .slide-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+    
+    .img-wrapper {
+      position: relative;
+      height: 100%;
+      img {
+        width: 100%;
+        opacity: .8;
+      }
+    }
+    
+    .slide-desc {
+      display: flex;
+      align-content: flex-start;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    @media (min-width: 1200px) {
+      
+      .slide-desc {
+        flex: 0 0 43%;
+        max-width: 43%;
+        padding: 0 3%;
+      }
+      .img-wrapper {
+        position: relative;
+        flex: 0 1 54%;
+        max-width: 54%;
+      }
+    }
+    
+    @media (max-width: 1199px) {
+      .slide-desc {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 0 30px;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .slide-desc {
+        width: 100%;
+      }
+    }
+    
+    .description {
+      padding: 25px 20px;
+      color: $dark;
+      background-color: rgba($white, .4);
+      h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+        color: $dark;
+      }
+  
+      h1, .h1{
+        
+      }
+      
+      p.h6 {
+        letter-spacing: 0.2em;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-family:$secondaryFontFamily;
+      }
+      p.h5 {
+        font-weight: 500;
+      }
+      
+      p.text {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.8;
+        text-transform: none;
+        @media (min-width: 1200px) {
+          font-size: 18px;
+        }
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+      * + .btn {
+        margin-top: 10px;
+      }
+    }
+    
+    @media (min-width: 480px) {
+      .description {
+        padding: 20px;
+        p.text {
+          margin-bottom: 10px;
+          margin-top: 10px;
+        }
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .description {
+        padding: 0 20px 40px;
+        background-color: transparent;
+        p.text {
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+        * + .btn {
+          margin-top: 20px;
+        }
+      }
+    }
+    
+    @media (min-width: 1780px) {
+      .description {
+        padding: 0 20px 60px;
+        margin-bottom: 30px;
+        * + .btn {
+          margin-top: 30px;
+        }
+      }
+    }
+    
+    @media (min-width: 1990px) {
+      
+      .description {
+        padding: 0 40px 80px;
+      }
+    }
+  }
+}
+
+.swiper-slider.swiper-container {
+  
+  margin-bottom: 0;
+  
+  .swiper-wrapper {
+    box-sizing: inherit;
+  }
+  &.swiper-container-horizontal {
+    > .swiper-pagination-bullets {
+      
+      &.swiper-pagination {
+        @media (min-width: 1780px) {
+          position: absolute;
+          text-align: left;
+          width:auto;
+          left: auto;
+          right: 29.5%;
+          z-index: 12;
+          bottom: 112px;
+        }
+        
+        @media (min-width: 1200px) and (max-width: 1789px) {
+          text-align: right;
+          margin-left: -10%;
+        }
+      }
+      
+      .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        display: inline-block;
+        border-radius: 100%;
+        opacity: 1;
+        transition: all .3s ease;
+        transform: scale(.6);
+        margin: 5px 12px 0;
+        background: $white;
+        box-shadow: 0 0 0 2px transparent;
+        cursor: pointer;
+        position: relative;
+        
+        &:first-child {
+          margin-left: 5px;
+        }
+        &:last-child {
+          margin-right: 5px;
+        }
+        &.swiper-pagination-bullet-active, &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 0 2px $white;
+          background: transparent;
+        }
+        &.swiper-pagination-bullet-active {
+          pointer-events: none;
+        }
+      }
+      @media (min-width: 1200px) {
+        .swiper-pagination-bullet {
+          margin: 11px 24px 0;
+        }
+      }
+    }
+  }
+}
+
+
+

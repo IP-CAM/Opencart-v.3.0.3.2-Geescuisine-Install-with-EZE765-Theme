@@ -1,0 +1,28 @@
+/* ===================   Social list   =================== */
+$facebookBg       : #3c5b9b;
+$youtubeBg        : #fe3432;
+$googleBg         : #f63d27;
+$twitterBg        : #2daae1;
+$pinterestBg      : #bd2126;
+$instagramBg      : #125688;
+$vimeoBg          : #17b3e8;
+
+.social-list {
+	i {
+		text-align: center;
+	}
+	li {
+		display:inline-block;
+		float:left;
+		+ li {
+			margin:0 0 0 17px;
+		}
+	}
+}
+
+.module-social .col-sm-3 {
+	width:100%;
+	padding-left:0;
+	padding-right:0;
+}
+

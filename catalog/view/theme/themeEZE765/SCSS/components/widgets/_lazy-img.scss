@@ -1,0 +1,29 @@
+/*==================   Lazy Img    ======================*/
+
+$lazy-bg: #FFF;
+
+.lazy {
+	display: block;
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	background: transparent url(../image/lazy-loader.gif) no-repeat center center;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		z-index: 0;
+		transition: 1s all ease;
+		opacity: 0;
+		-webkit-backface-visibility: hidden;
+	}
+
+	&.lazy-loaded {
+		background: none;
+		img {
+			opacity: 1;
+		}
+	}
+}

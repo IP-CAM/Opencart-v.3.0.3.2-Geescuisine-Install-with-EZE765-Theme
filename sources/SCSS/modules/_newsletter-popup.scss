@@ -1,0 +1,169 @@
+//--------------------------------------------------------------
+//                    NewsLetter Popup Module
+//--------------------------------------------------------------
+
+#zemez-newsletter-popup-form {
+  @include clearfix;
+}
+
+.newsletter-popup-wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  z-index: 10000;
+  background: rgba(#fff, .4);
+  padding-top: 100px;
+}
+
+.newsletter-popup {
+  position: relative;
+  @include clearfix;
+  max-width: 1022px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-color: $white;
+  box-shadow: 0px 0px 35px rgba(154, 162, 163, 0.3);
+  
+  h2 {
+    font: 300 36px/43px $baseFontFamily;
+    text-transform: capitalize;
+    margin: 0;
+    + p {
+      margin: 22px 0 2px;
+      letter-spacing: 0;
+      line-height: 27px;
+    }
+  }
+  
+  a.link{
+    font-size: 12px;
+    text-transform: none;
+  }
+  
+  @media (min-width: 768px) {
+    height: 623px;
+    padding: 0 40px 0 26%;
+  }
+  
+  
+  .box-content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 568px;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: $white;
+    
+    @media (max-width: 767px) {
+      background-color: rgba($light-300, .65);
+      padding: 30px 20px;
+      margin-bottom: 0;
+    }
+  }
+  
+  .zemez-login-form {
+    position: relative;
+    margin: 20px auto 0;
+    input {
+      width: 100%;
+      color: $baseColor;
+      font: 300 12px/16px $secondaryFontFamily;
+      background: transparent;
+      border: 1px solid $gray-300;
+      height: 53px;
+      text-align: center;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      @media (min-width: 1200px) {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .btn-wrapper,
+  .zemez-login-form {
+    max-width: 250px;
+  }
+  
+  .btn + .link {
+    margin-top: 25px;
+    display: inherit;
+  }
+  
+  @media (min-width: 768px) {
+    #zemez-newsletter-popup-button {
+      min-width: 250px;
+    }
+  }
+  
+  
+  .logo + h2 {
+    margin-top: 25px;
+  }
+  
+  .logo img {
+    display: inline-block;
+  }
+  
+  .newsletter-popup-dont-show {
+    float: right;
+    color: rgba(#fff, 0);
+    padding: 15px 17px;
+    border-color: #fff;
+    position: relative;
+    overflow: hidden;
+    &:visited {
+      color: rgba(#fff, 0);
+      border-color: #fff;
+    }
+    &:hover, &:focus, &:active {
+      color: rgba(#fff, 0);
+      background: $secondary;
+      border-color: $secondary;
+      box-shadow: none;
+    }
+  }
+  .newsletter-popup-close-btn:not(.btn) {
+    color: $dark;
+    font-size: 24px;
+    line-height: 30px;
+    outline: medium none;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    opacity: 1;
+    &:hover, &:focus, &:active {
+      color: $secondary;
+      text-decoration: none;
+    }
+  }
+}
+
+.newsletter-popup .newsletter-error, .newsletter-popup .newsletter-success {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  line-height: 16px;
+  position: absolute;
+  bottom: 9px;
+  transition: .3s all ease;
+}
+
+.newsletter-popup {
+  .newsletter-error {
+    color: #bc2029;
+  }
+  .newsletter-success {
+    color: #55C65E;
+  }
+}
+

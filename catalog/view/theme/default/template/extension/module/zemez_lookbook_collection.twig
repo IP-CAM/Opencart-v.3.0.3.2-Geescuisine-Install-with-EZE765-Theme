@@ -1,0 +1,143 @@
+<div class="lookbook lookbook--collection">
+	<div class="row">
+		<div class="col-xs-12 col-sm-8">
+			<div class="lookbook__img">
+				<img src="{{ thumb }}" alt="" usemap="{{ '#' ~ module ~ '_map' }}">
+				{% for product in products %}
+					{% if (module ~ '_' ~ product['product_id'] in product_map) %}
+						<div data-marker="{{ module ~ '_' ~ product['product_id'] }}">
+							<i class="fa"></i>
+							<div class="marker__cnt" data-marker-cnt="{{ module ~ '_' ~ product['product_id'] }}">
+								<i class="fa fa-times close-btn"></i>
+								{% if (product['special']) %}
+									{% if (label_sale) %}
+										<div class="sale">
+											<span>{{ text_sale }}</span>
+										</div>
+									{% endif %}
+									{% if (label_discount) %}
+										<div class="discount">
+											<span>{{ product['label_discount'] }}</span>
+										</div>
+									{% endif %}
+								{% endif %}
+								{% if (product['label_new']) %}
+									<div class="new-pr"><span>{{ text_new }}</span></div>
+								{% endif %}
+								<img width="{{ product['img-width'] }}" height="{{ product['img-height'] }}" alt="{{ product['name'] }}" title="{{ product['name'] }}" class="" src="{{ product['thumb'] }}"/>
+								<div class="name">
+									<a href="{{ product['href'] }}">{{ product['name'] }}</a>
+								</div>
+								{% if (product['price']) %}
+									<div class="price">
+										{% if (not product['special']) %}
+											{{ product['price'] }} 
+										{% else %}
+											<span class="price-new">{{ product['special'] }}</span> 
+											<span class="price-old">{{ product['price'] }}</span>
+										{% endif %}
+										{% if (product['tax']) %}
+											<span class="price-tax">{{ text_tax }} {{ product['tax'] }}</span>
+										{% endif %}
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+				{{ product_map }} 
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			<div class="lookbook__aside lookbook__aside--fixed">
+				<div class="row">
+					{% for product in products %}
+						<div class="col-xs-4 col-sm-12">
+							<div data-mapid="{{ module ~ '_' ~ product['product_id'] }}">
+								{% if (product['special']) %}
+									{% if (label_sale) %}
+										<div class="sale">
+											<span>{{ text_sale }}</span>
+										</div>
+									{% endif %}
+									{% if (label_discount) %}
+										<div class="discount">
+											<span>{{ product['label_discount'] }}</span>
+										</div>
+									{% endif %}
+								{% endif %}
+								{% if (product['label_new']) %}
+									<div class="new-pr"><span>{{ text_new }}</span></div>
+								{% endif %}
+								<img width="{{ product['img-width'] }}" height="{{ product['img-height'] }}" alt="{{ product['name'] }}" title="{{ product['name'] }}" class="" src="{{ product['thumb'] }}"/>
+								<div class="caption">
+									<div class="name">
+										<a href="{{ product['href'] }}">{{ product['name'] }}</a>
+									</div>
+									{% if (product['price']) %} 
+									<div class="price">
+										{% if (not product['special']) %} 
+										{{ product['price'] }} 
+										{% else %} 
+										<span class="price-old">{{ product['price'] }}</span> <span class="price-new">{{ product['special'] }}</span> 
+										{% endif %} 
+										{% if (product['tax']) %} 
+										<span class="price-tax">{{ text_tax }} {{ product['tax'] }}</span>
+										{% endif %} 
+									</div>
+								</div>
+								{% endif %}
+								{% if (product['options']) %}
+									<!-- Product options -->
+									<div class="product-option-wrap">
+										<div class="product-options form-horizontal">
+											<div class="options">
+												<a class="ajax-overlay_close" href='#'></a>
+												<div class="form-group hidden">
+													<div class="col-sm-8">
+														<input type="text" name="product_id" value="{{ product['product_id'] }}" class="form-control"/>
+													</div>
+												</div>
+													<div class="option-color">
+														{% for option in product['options'] %} 
+														{% if (option['type'] == 'radio') %} 
+														{% set option_image = constant('false') %} {% for option_value in option['product_option_value'] %} 
+														{% if (option_value['image']) %} {% set option_image = constant('true') %}{% endif %} 
+														{% endfor %} 
+														<div class="form-group">
+															<div class="col-sm-12">
+																<div id="input-option{{ option['product_option_id'] ~ module }}">
+																	{% for option_value in option['product_option_value'] %} 
+																	{% if (option_image) %} 
+																	<div class="radio">
+																		<label>
+																			<input type="radio" name="option[{{ option['product_option_id'] }}]" value="{{ option_value['product_option_value_id'] }}" />
+																			<img width="21" height="21" data-toggle="tooltip" title="{{ option_value['name'] }}{% if (option_value['price']) %} ({{ option_value['price_prefix'] }}{{ option_value['price'] }}) {% endif %}" src="{{ option_value['image'] }}" alt="{{ option_value['name'] ~ option_value['price'] ? ' ' ~ option_value['price_prefix'] ~ option_value['price'] : '' }}" class="img-thumbnail" />
+																		</label>
+																	</div>
+																	{% endif %} 
+																	{% endfor %} 
+																</div>
+															</div>
+														</div>
+														{% endif %} 
+														{% endfor %} 
+													</div>													
+												</div>
+											</div>
+										</div>
+									{% endif %}
+									<button class="btn-primary" type="button" onclick="cart.add('{{ product['product_id'] }}');" >{{ button_cart }}</button>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			{% if (_GET['route'] is defined and _GET['route'] != 'product/lookbook/collection') %}
+				<div class="col-xs-12">
+					<a href="{{ collections }}" class="btn">{{ button_collections }}</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>

@@ -1,0 +1,20 @@
+﻿//--------------------------------------------------------------
+//                     Full Width menu
+//--------------------------------------------------------------
+
+
+.sf-menu{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  > li {
+    position: relative;
+    display: table-cell;
+  }
+}
+
+
+
+
+

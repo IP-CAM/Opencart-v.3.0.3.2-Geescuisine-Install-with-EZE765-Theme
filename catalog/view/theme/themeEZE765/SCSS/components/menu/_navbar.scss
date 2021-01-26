@@ -1,0 +1,480 @@
+/*==================   RD Mobile Menu    =====================*/
+$dark-theme: (
+  panel-background-color: #222222,
+  panel-text-color: #FFF,
+  menu-background-color: #222222,
+  menu-item-color: #A5BFD2,
+  menu-item-hover-color: #FFF,
+  menu-item-hover-background: $brand-primary,
+  menu-item-active-color: #fff,
+  menu-item-active-background: #313e4e
+);
+
+$light-theme: (
+  panel-background-color: #FFF,
+  panel-text-color: #000,
+  menu-background-color: #FFF,
+  menu-item-color: #666,
+  menu-item-hover-color: #FFF,
+  menu-item-hover-background: #002F35,
+  menu-item-active-color: #2d2d2d,
+  menu-item-active-background: #f5f5f5
+);
+
+$rd-theme: $dark-theme;
+$rd-menu-toggle-preset: "button-lines-cross-1";
+
+$rd-mobilepanel-height: 32px;
+$rd-button-size: 22px;
+$rd-icon-size: 13px;
+$rd-menu-width: 240px;
+
+.rd-mobilemenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  text-align: left;
+  transition: .3s all ease;
+  .rd-mobilemenu_ul {
+    z-index: 11;
+  }
+  &:after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    background-color: #000;
+    opacity: 0;
+    display: none;
+  }
+  
+  &.active {
+    right: 0;
+    &:after {
+      opacity: 0.5;
+      display: block;
+    }
+  }
+}
+
+.rd-mobilemenu_ul {
+  position: fixed;
+  top: -$rd-mobilepanel-height;
+  left: 0;
+  bottom: -$rd-mobilepanel-height;
+  width: $rd-menu-width;
+  padding: (20px + $rd-mobilepanel-height*2) 0 (20px + $rd-mobilepanel-height);
+  color: map-get($rd-theme, menu-item-color);
+  background: map-get($rd-theme, menu-background-color);
+  font-size: 14px;
+  line-height: 20px;
+  overflow: auto;
+  box-shadow: 5px 0 5px 0 rgba(0, 0, 0, .1);
+  transform: translateX(-$rd-menu-width);
+  transition: 0.3s ease;
+  transition: 0.3s cubic-bezier(.55, 0, .1, 1);
+  
+  .rd-mobilemenu.active & {
+    transform: translateX(0);
+  }
+  a {
+    display: block;
+    &.active, &:hover, &:active, &.activeMenu {
+      text-decoration: underline;
+    }
+  }
+  
+  a {
+    display: block;
+    padding: 14px 45px 16px 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: $white;
+    .rd-submenu-toggle {
+      position: absolute;
+      top: 50%;
+      right: 11px;
+      margin-top: -17.5px;
+      width: 32px;
+      height: 32px;
+      font: 400 10px $fa;
+      line-height: 32px;
+      text-align: center;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      transition:.5s all ease;
+      z-index: 1;
+      background: rgba(#000, .1);
+      &:after {
+        content: '\f078';
+      }
+      
+    }
+    
+    &.rd-with-ul {
+      position: relative;
+      
+      &.active, &.open {
+        .rd-submenu-toggle {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    
+    &.rd-with-ul {
+      + ul {
+        display: none;
+      }
+    }
+    
+    &.rd-with-ul.open {
+      + ul {
+        display: block;
+      }
+    }
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    a {
+      padding-left: 40px;
+    }
+  }
+  
+  ul ul a {
+    padding-left: 60px;
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    height: 20px;
+  }
+}
+
+.rd-mobilepanel {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $rd-mobilepanel-height;
+  background: map-get($rd-theme, panel-background-color);
+  color: map-get($rd-theme, panel-text-color);
+  z-index: 10000;
+  border-bottom:2px solid $brand-primary;
+}
+
+.rd-mobilepanel_title {
+  position: fixed;
+  top: 4px;
+  left: $rd-mobilepanel-height + 10;
+  right: $rd-mobilepanel-height+40px;
+  color: map-get($rd-theme, panel-text-color);
+  font-size: $rd-icon-size;
+  line-height: $rd-button-size;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+//===========   Mobilepanel Toggle Presets   ==============
+
+// Hamburger
+@mixin button-lines() {
+  span {
+    position: relative;
+    display: block;
+    margin: auto;
+  transition: all .3s ease;
+    
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: (round($rd-icon-size / 6)) * -2;
+      transition: all .3s ease;
+    }
+    
+    &:after {
+      top: (round($rd-icon-size / 6)) * 2;
+    }
+    
+    &:after,
+    &:before,
+    & {
+      width: $rd-icon-size;
+      height: round($rd-icon-size / 6);
+      background-color: map-get($rd-theme, panel-text-color);
+      backface-visibility: hidden;
+      border-radius: 2px;
+    }
+  }
+}
+
+// Hamburger to Cross
+@mixin button-lines__cross-1() {
+  &.active span {
+    background: transparent;
+    
+    &:before, &:after {
+      transform-origin: 50% 50%;
+      top: 0;
+    }
+    
+    &:before {
+       transform: rotate(45deg);
+    }
+    &:after {
+       transform: rotate(-45deg);
+    }
+  }
+}
+
+@mixin button-lines__cross-2() {
+  span {
+    &:before, &:after {
+      -webkit-transition-duration: 0.3s, 0.3s;
+      transition-duration: 0.3s, 0.3s;
+      -webkit-transition-delay: 0.3s, 0s;
+      transition-delay: 0.3s, 0s;
+      -webkit-transition-property: top, -webkit-transform;
+      transition-property: top, transform;
+    }
+  }
+  
+  &.active span {
+    transition: background .3s 0s ease;
+    background: transparent;
+    
+    &:before, &:after {
+      top: 0;
+      -webkit-transition-delay: 0s, 0.3s;
+      transition-delay: 0s, 0.3s;
+    }
+    &:before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@mixin button-lines__cross-3() {
+  span {
+    &:before, &:after {
+      -webkit-transition-duration: 0.3s, 0.3s;
+      transition-duration: 0.3s, 0.3s;
+      -webkit-transition-delay: 0.3s, 0s;
+      transition-delay: 0.3s, 0s;
+      -webkit-transition-property: top, -webkit-transform;
+      transition-property: top, transform;
+    }
+  }
+  
+  &.active span {
+    transform: rotate(180deg);
+    transition: background .3s 0s ease;
+    background: transparent;
+    
+    &:before, &:after {
+      top: 0;
+      -webkit-transition-delay: 0s, 0.3s;
+      transition-delay: 0s, 0.3s;
+    }
+    &:before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Hamburger to Arrow
+@mixin button-lines__arrow-1() {
+  span {
+    &:before,
+    &:after {
+     transform-origin: $rd-icon-size/14 center;
+    }
+  }
+  
+  &.active span {
+    &:before,
+    &:after {
+      top: 0;
+      width: $rd-icon-size/1.6;
+    }
+    
+    &:before {
+      transform: rotate(-40deg);
+    }
+    &:after {
+      transform: rotate(40deg);
+    }
+  }
+}
+
+// Hamburger to Arrow (Material Design)
+@mixin button-lines__arrow-2() {
+  span {
+     transform: rotate(180deg);
+    &:before,
+    &:after {
+       transform-origin: $rd-icon-size/14 center;
+    }
+  }
+  
+  &.active span {
+    transform: rotate(360deg);
+    
+    &:before,
+    &:after {
+      top: 0;
+      width: $rd-icon-size/1.6;
+    }
+    
+    &:before {
+      -webkit-transform: rotate3d(0, 0, 1, -40deg);
+      transform: rotate3d(0, 0, 1, -40deg);
+    }
+    &:after {
+      -webkit-transform: rotate3d(0, 0, 1, 40deg);
+      transform: rotate3d(0, 0, 1, 40deg);
+    }
+  }
+}
+
+// Hamburger to Minus
+@mixin button-lines__minus-1() {
+  span {
+    &:before,
+    &:after {
+      transition: all .3s ease;
+    }
+  }
+  
+  &.active span {
+    &:before,
+    &:after {
+      top: 0;
+    }
+  }
+}
+
+//===============   Mobilepanel Toggle   =================
+.rd-mobilepanel_toggle {
+  @include reset-button();
+  position: fixed;
+  top: 4px;
+  left: 15px;
+  width: $rd-button-size;
+  height: $rd-button-size;
+  
+  @if ($rd-menu-toggle-preset == button-lines-cross-1) {
+    @include button-lines();
+    @include button-lines__cross-1();
+  }
+  
+  @if ($rd-menu-toggle-preset == button-lines-cross-2) {
+    @include button-lines();
+    @include button-lines__cross-2();
+  }
+  
+  @if ($rd-menu-toggle-preset == button-lines-cross-3) {
+    @include button-lines();
+    @include button-lines__cross-3();
+  }
+  
+  @if ($rd-menu-toggle-preset == button-lines-arrow-1) {
+    @include button-lines();
+    @include button-lines__arrow-1();
+  }
+  
+  @if ($rd-menu-toggle-preset == button-lines-arrow-2) {
+    @include button-lines();
+    @include button-lines__arrow-2();
+  }
+  
+  @if ($rd-menu-toggle-preset == button-lines-minus-1) {
+    @include button-lines();
+    @include button-lines__minus-1();
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: $rd-mobilepanel-height;
+  }
+  
+  .rd-mobilemenu, .rd-mobilepanel {
+    display: block;
+  }
+  
+  .rd-mobilemenu_ul .banners.row {
+    margin: 0;
+    padding: 5px;
+  }
+  .rd-mobilemenu_ul .banners.row > div.fourth .s-desc {
+    position: absolute;
+    pointer-events: none;
+    top: auto;
+    bottom: 26px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .rd-mobilemenu_ul .banners.row > div.one-third .s-desc {
+    h3 {
+      font-size: 14px;
+      line-height: 16px;
+      padding-bottom: 0;
+      margin-bottom: 5px;
+      &:after {
+        display: none;
+      }
+    }
+    .btn {
+      bottom: 10%;
+    }
+    font-size: 9px;
+    line-height: 12px;
+    div {
+      top: 30%;
+      + a {
+        padding: 5px 19px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .rd-mobilepanel_title {
+    font-size: 16px;
+  }
+}

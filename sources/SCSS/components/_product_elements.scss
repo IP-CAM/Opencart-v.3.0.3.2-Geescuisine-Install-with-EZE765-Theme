@@ -1,0 +1,385 @@
+/*========================================================
+                      Product Elements
+=========================================================*/
+
+.product-flags {
+  padding-left: 0;
+}
+
+/* ==================   SALE   =================== */
+.sale, .sale-percent, .new-pr {
+  text-transform: uppercase;
+  display: inline-block;
+  position: absolute;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 3px;
+  font-weight: 500;
+  font-family: $secondaryFontFamily;
+  @media (min-width: 1399px) {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 8px 5px;
+  }
+}
+
+.sale, .sale-percent {
+  top: 0;
+  left: 0;
+  color: $white;
+}
+
+.sale, .new-pr, .sale-percent {
+  left: 0;
+  top: 0;
+  min-width: 50px;
+  text-align: center;
+  @media (min-width: 1399px) {
+    min-width: 105px;
+  }
+}
+
+.sale {
+  background-color: $brand-danger;
+}
+
+.new-pr {
+  background-color: $brand-info;
+  color: $white;
+}
+
+.sale-percent {
+  background: $brand-danger;
+}
+
+*:not(.lazy) + .new-pr {
+  top: 20px;
+  @media (min-width: 1399px) {
+    top: 35px;
+  }
+}
+
+/* ===================   Product Price    =================== */
+
+.price-new, .price {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.35;
+  font-family: $secondaryFontFamily;
+  color: $dark;
+  @media (min-width: 1400px) {
+    font-size: 36px;
+  }
+}
+
+
+.price-old {
+  color: $baseColor;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 300;
+  @media (min-width: 1400px) {
+    font-size: 20px;
+  }
+}
+
+.price-old {
+  text-decoration: line-through;
+}
+
+.price-tx {
+  color: $dark;
+}
+
+.price-section {
+  margin: 15px 0;
+  
+  @media (min-width: 768px) {
+    .price-new, .price {
+      font-size: 40px;
+      line-height: 54px;
+    }
+    .price-old {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  
+  .reward {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+.price-tax {
+  font-size: 12px;
+}
+
+.price-total {
+  font-weight: bold;
+}
+
+.price b {
+  font-weight: 400;
+  color: $secondary;
+}
+
+.stock, .out-stock {
+  font-weight: 700;
+}
+
+.stock {
+  color: #143546;
+  font-family: $baseFontFamily;
+}
+
+.out-stock {
+  color: $brand-primary;
+}
+
+
+/* ===================   Product Rating   =================== */
+.fa-stack {
+  font-size: 14px;
+  line-height: 16px;
+  width: 0.8em;
+  height: 16px;
+  i {
+    color: #7f8187;
+    &.star {
+      color: $color-orange;
+    }
+  }
+}
+
+
+
+.fa-stack-2x {
+  font-size: 1em;
+}
+
+.product-thumb .fa-stack {
+  font-size: 14px;
+}
+
+.rat {
+  color: $brand-primary;
+}
+
+/* ===================   Product Countdown   =================== */
+ul.product-countdown {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 6px 3px 5px;
+  list-style: none;
+  text-align: center;
+  color: $white;
+  background: $brand-primary;
+  font-family:$secondaryFontFamily;
+  
+  li {
+    display:block;
+    padding: 0 3px;
+    font-size: 16px;
+    
+    &.cell {
+      font-size: 8px;
+      line-height: 14px;
+      font-weight: 500;
+      .number {
+        font-size: 11px;
+        line-height: 1;
+      }
+    }
+    span {
+      width: 100%;
+      display: block;
+      font-size: 12px;
+      text-transform: none;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    padding: 14px 7px 10px;
+    li {
+      font-size: 16px;
+      padding-top: 5px;
+      &.cell {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 5px 7px;
+        text-transform: none;
+        + li {
+          padding-top: 0;
+          min-width: 17px;
+        }
+        .number {
+          font-size: 26px;
+          letter-spacing: 0.2em;
+          min-width: 40px;
+        }
+      }
+      span {
+        font-size: 14px;
+      }
+      + li {
+        margin-left: 5px;
+      }
+    }
+  }
+  .product-thumb & {
+    li {
+      + li {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* ===================   Quantity   =================== */
+.product-btn-wrapper {
+  display: inline-flex;
+align-items: center;
+
+@media (max-width: 479px) {
+  flex-wrap: wrap;
+  > * {
+    margin-top: 15px;
+  }
+}
+}
+
+
+.quantity {
+  margin-top: 0;
+  display: inline-block;
+  position: relative;
+  > label {
+    font-family: $secondaryFontFamily;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+  input[name*="quantity"] {
+    height: 27px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+  }
+  .counter {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    width: 13px;
+    height: 13px;
+    line-height: 6px;
+    vertical-align: top;
+    padding-top: 6px;
+    font-size: 12px;
+    &.counter-minus {
+      top: auto;
+      bottom: 0;
+    }
+  }
+  .quantity_wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 230px;
+    border: 1px solid $gray-300;
+    padding: 11px;
+    
+    @media (min-width: 1200px) {
+      padding: 13px;
+    }
+    
+  }
+  
+  input[name*=quantity] {
+    background: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+  }
+  label {
+    display: none;
+  }
+  .counter, .counter:focus {
+    background: none;
+  }
+  
+  .counter {
+    position: static;
+    padding: 5px;
+    line-height: 1;
+    vertical-align: inherit;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+  }
+}
+
+
+
+
+/*========================================================
+               Responsive Styles Elements
+=========================================================*/
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .name {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  
+  .product-countdown {
+    padding-left: 5px;
+    padding-right: 5px;
+    li {
+      letter-spacing: -.7px;
+      span {
+        font-size: 7px;
+      }
+      .cell {
+        font-size: 5px;
+        line-height: 11px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .box .box-content .last {
+    clear: left;
+  }
+  .fancybox-next {
+    right: -30px;
+  }
+  .fancybox-prev {
+    left: -30px;
+  }
+  .product-reviews .fa-stack {
+    font-size: 14px;
+  }
+  
+  .product-layout.col-lg-4:nth-child(3n+1) {
+    clear: left;
+  }
+}
+
+@media (max-width: 540px) {
+  .name {
+    font-size: 12px;
+  }
+}
+
+
+

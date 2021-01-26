@@ -1,0 +1,10 @@
+@import "include/_variables.scss";
+@import "include/_mixins.scss";
+
+$scheme: map-get($schemes, scheme_1);
+
+
+.product-info a, .product-rating-status .review-link-show a:hover {
+  color: nth($scheme, 1);
+}
+

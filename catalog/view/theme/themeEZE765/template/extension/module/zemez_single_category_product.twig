@@ -1,0 +1,133 @@
+<script>
+	{% if (tabs == '1') %}
+  $(document).ready(function($) {
+    $('#module-single-tabs-{{ module }} a:first').tab('show')
+  });
+	{% else %}
+  $(document).ready(function($) {
+    $('#single-category{{ module }} .tab-content > .tab-pane').css({
+      'display'    : 'block',
+      'visibility' : 'visible'
+    });
+  });
+	{% endif %}
+</script>
+
+<div class="box single-category">
+	<div class="box-content">
+		{% if (tabs == '0') %}
+			<div class="box-heading"><h3 class="product-section-title">{{ category_name }}</h3></div>  {% endif %}
+		{% if (tabs == '1') %}
+		<div role="tabpanel" class="single-category_tabs" id="single-category{{ module }}">
+			<div class="box-heading">
+				<h3 class="product-section-title mb-0">{{ category_name }}</h3>
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist" id="module-single-tabs-{{ module }}">
+					{% if (latest_products) %}
+						<li><a href="#tab-single-latest-{{ module }}" role="tab" data-toggle="tab">{{ heading_latest }}</a></li>
+					{% endif %}
+					{% if (bestseller_products) %}
+						<li><a href="#tab-single-bestsellers-{{ module }}" role="tab" data-toggle="tab">{{ heading_bestsellers }}</a></li>
+					{% endif %}
+					{% if (featured_products) %}
+						<li><a href="#tab-single-featured-{{ module }}" role="tab" data-toggle="tab">{{ heading_featured }}</a></li>
+					{% endif %}
+					{% if (special_products) %}
+						<li><a href="#tab-single-specials-{{ module }}" role="tab" data-toggle="tab">{{ heading_specials }}</a></li>
+					{% endif %}
+				</ul>
+			</div>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				{% endif %}
+				
+				{% if featured_products %}
+					{% if (tabs == '1') %}
+						<div role="tabpanel" class="tab-pane" id="tab-single-featured-{{ module }}">
+					{% endif %}
+					<div class="clearfix">
+						<div class="row products" {% if layout_type %} data-box-carousel data-carousel-settings="items: 4, space: 30" data-nav-id="single-featured-{{ module }}"{% endif %}>
+							{% set option_index = 100000 %}
+							{% for product in featured_products %}
+								<div class="product-layout col-xl-3 col-md-4 col-6">
+									{%  include '/' ~ theme_path ~ '/template/product/_partials/product_thumbnail.twig'  %}
+								</div>
+								{% set option_index = option_index + 1 %}
+							{% endfor %}
+						</div>
+						<div class="view-all">
+							<a class="btn btn-primary btn-lg" href='{{ category_link }}'>{{ text_view }}</a>
+						</div>
+					</div>
+					{% if (tabs == '1') %}
+						</div>
+					{% endif %}
+				{% endif %}
+				{% if latest_products %}
+					{% if (tabs == '1') %}
+						<div role="tabpanel" class="tab-pane" id="tab-single-latest-{{ module }}">
+					{% endif %}
+					<div class="clearfix">
+						<div class="row products" {% if layout_type %}data-box-carousel data-carousel-settings="items: 4, space: 40" data-nav-id="single-latest-{{ module }}"{% endif %}>
+							{% set option_index = 200000 %}
+							{% for product in latest_products %}
+								
+								<div class="product-layout col-xl-3 col-md-4 col-6">
+									{%  include '/' ~ theme_path ~ '/template/product/_partials/product_thumbnail.twig'  %}
+								</div>
+								
+								{% set option_index = option_index + 1 %}
+							{% endfor %}
+						</div>
+					</div>
+					{% if (tabs == '1') %}
+						</div>
+					{% endif %}
+				{% endif %}
+				{% if special_products %}
+					{% if (tabs == '1') %}
+						<div role="tabpanel" class="tab-pane" id="tab-single-specials-{{ module }}">
+					{% endif %}
+					<div class="clearfix">
+						<div class="row products" {% if layout_type %}data-box-carousel data-carousel-settings="items: 4, space: 40" data-nav-id="single-specials-{{ module }}"{% endif %}>
+							{% set option_index = 300000 %}
+							{% for product in special_products %}
+								
+								<div class="product-layout col-xl-3 col-md-4 col-6">
+									{%  include '/' ~ theme_path ~ '/template/product/_partials/product_thumbnail.twig'  %}
+								</div>
+								
+								{% set option_index = option_index + 1 %}
+							{% endfor %}
+						</div>
+					</div>
+					{% if (tabs == '1') %}
+						</div>
+					{% endif %}
+				{% endif %}
+				{% if bestseller_products %}
+					{% if (tabs == '1') %}
+						<div role="tabpanel" class="tab-pane" id="tab-single-bestsellers-{{ module }}">
+					{% endif %}
+					<div class="clearfix">
+						<div class="row products" {% if layout_type %}data-box-carousel data-carousel-settings="items: 4, space: 40" data-nav-id="single-bestsellers-{{ module }}"{% endif %}>
+							{% set option_index = 400000 %}
+							{% for product in bestseller_products %}
+								<div class="product-layout col-xl-3 col-md-4 col-6">
+									{%  include '/' ~ theme_path ~ '/template/product/_partials/product_thumbnail.twig'  %}
+								</div>
+								
+								{% set option_index = option_index + 1 %}
+							{% endfor %}
+						</div>
+					</div>
+					{% if (tabs == '1') %}
+						</div>
+					{% endif %}
+				{% endif %}
+				{% if (tabs == '1') %}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>

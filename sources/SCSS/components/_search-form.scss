@@ -1,0 +1,181 @@
+//--------------------------------------------------------------
+//                    Search Form
+//--------------------------------------------------------------
+// input variables
+$form-bg: $borderColor;
+$form-width: 100%;
+$form-height: 55px;
+$form-border: 1px solid $borderColor;
+$form-color: $dark;
+
+// button variables
+$form-submit-color: rgba(#222328, .8);
+$form-submit-hover: $brand-primary;
+
+.search {
+  position: relative;
+  width: 509px;
+  input[type="text"] {
+    color: $form-color;
+    display: block;
+    margin: 0;
+    font: normal 13px/16px $baseFontFamily;
+    width: $form-width;
+    height: $form-height;
+    padding: (($form-height - 14px) / 2) 35px (($form-height - 14px) / 2) 30px;
+    background: $form-bg;
+    border: $form-border;
+    letter-spacing: .5px;
+    box-sizing: border-box;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-input-placeholder {
+      color: $form-color;
+      opacity: 1;
+    }
+    &:-moz-placeholder {
+      color: $form-color;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: $form-color;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: $form-color;
+      opacity: 1;
+    }
+  }
+  button, button:focus, button:active {
+    @include reset-button;
+    transition: .3s all ease;
+    position: absolute;
+    top: 0;
+    right: 13px;
+    color: $form-submit-color;
+    font: 400 14px/52px $fa;
+  }
+  button:hover, button:focus:hover, button:active:hover {
+    color: $form-submit-hover;
+  }
+  
+  .button-search {
+    font-size: 24px;
+  }
+}
+
+//--------------------------------------------------------------
+//                    Responsive Search Form Layout
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+//                    Live Search
+//--------------------------------------------------------------
+#livesearch_search_results {
+  margin: 3px 0 0;
+  padding: 5px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  list-style-type: none;
+  z-index: 12;
+  font-size: 14px;
+  font-family: $secondaryFontFamily;
+  font-weight: 300;
+  background: #f3f4f5;
+  border-radius: 4px;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  li {
+    transition: .3s all ease;
+    border: 1px solid transparent;
+    img {
+      margin-right: 10px;
+      &.loading {
+        background: #F5F5F5;
+      }
+    }
+    
+    &:hover, &.highlighted {
+      background-color: #fff;
+      border-color: $dark;
+      a, a:visited {
+        color: $dark;
+      }
+    }
+  }
+  a, a:visited {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    color: $dark;
+    @include clearfix;
+  }
+}
+
+.box-search {
+  .toggle_cont {
+    position: fixed;
+    left: 50%;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 770px;
+    width: 100%;
+    padding: 15px 20px;
+    background: #fff;
+    
+    &:after {
+      content: '\ec35';
+      font-family: 'Linearicons';
+      position: absolute;
+      right: -34px;
+      top: -34px;
+      z-index: 20;
+      color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+  
+  .toggle.active {
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background-color: #000;
+      opacity: .5;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .toggle_cont {
+      padding: 30px 50px;
+    }
+    .toggle.active + .toggle_cont {
+      &:after {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .toggle_cont {
+      padding: 160px 100px;
+    }
+  }
+  
+  .search {
+    width: 100%;
+  }
+}
+

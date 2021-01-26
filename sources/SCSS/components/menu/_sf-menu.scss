@@ -1,0 +1,448 @@
+/*========================================================
+                      Menu styles
+=========================================================*/
+
+header .megamenu {
+  text-align: center;
+  @media (min-width: 768px) {
+    .sf-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+/*================ Menu  ===============*/
+
+.sf-menu {
+  @include list-style-none;
+  > li {
+    > a {
+      font-size: 12px;
+      line-height: 1.2;
+      padding: 10px 15px;
+      color: $dark;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-family: $secondaryFontFamily;
+    }
+    &.sfHover > a, > a:hover, > a.active {
+      color: $brand-primary;
+    }
+    
+    
+    @media (min-width: 768px) {
+      > a {
+        padding: 5px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    }
+  
+  
+    @media (min-width: 1780px) {
+      > a {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 15px 0;
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+    }
+    ul {
+      text-align: left;
+    }
+  }
+  
+  @media (min-width: 768px)  {
+    flex-wrap: wrap;
+  }
+  li {
+    position: relative;
+    &.sf-with-mega {
+      position: static;
+    }
+  }
+  li > a {
+    display: block;
+  }
+  
+  ul li {
+    font-size: 13px;
+    line-height: 18px;
+    &.sfHover > a, > a:hover, > a:focus, > a:active, > a.active {
+      color: $baseColor;
+    }
+    + li {
+      margin-top: 16px;
+    }
+  }
+  .submenu_title {
+    margin-bottom: 15px;
+    > a {
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 1.1px;
+      color: $dark;
+      &:visited {
+        color: $dark;
+      }
+      &:hover, &:focus, &:active, &.active {
+        color: $baseColor;
+      }
+    }
+  }
+}
+
+/*================ Sub-menu lvl1  ===============*/
+.sf-menu .simple_menu {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  z-index: 109;
+  left: 20px;
+  top: 100%;
+  width: 200px;
+  margin-top: 0;
+  padding: 0;
+  background: $stockBg;
+  li {
+    position: relative;
+    a {
+      display: block;
+      padding: 13px 30px 13px 20px;
+      text-transform: none;
+    }
+    &.sfHover > a, > a:hover, > a.active, &.active > a {
+      color: #fff;
+      background: $dark;
+    }
+    + li {
+      margin-top: 0;
+    }
+  }
+}
+
+
+/*================ Sub-menu lvl2 ===============*/
+.sf-menu .simple_menu .simple_menu {
+  left: 100%;
+  top: 0;
+  margin-top: 0;
+  &:before {
+    display: none;
+  }
+}
+
+.menu-gadget {
+  display: none !important;
+}
+
+//--------------------------------------------------------------
+//                      Megamenu Styles
+//--------------------------------------------------------------
+.sf-menu .sf-mega {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  top: 74px;
+  left: 0;
+  right: 0;
+  z-index: 109;
+  padding: 28px 40px 30px 40px;
+  background: #fff;
+  box-shadow: 0px 0px 35px rgba(154, 162, 163, 0.3);
+  @media (min-width: 1200px) {
+    max-height: 900px;
+    overflow-y: auto;
+  }
+  
+  .container, [class*="col-"], .row {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    &:not(.product-layout) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
+  .sf-mega_section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  @media (min-width: 1780px) {
+    padding: 74px 40px;
+    .megamenu_module {
+      .banner {
+        padding: 0 50px;
+      }
+    }
+  }
+  
+  > li + li {
+    margin-top: 37px;
+  }
+  
+  > li {
+    padding: 0;
+  }
+  li {
+    display: block;
+    > a, > span {
+      display: inline-block;
+      font-size: 13px;
+      line-height: 18px;
+      color: $dark;
+      text-transform: none;
+    }
+    &.sfHover > a, > a:hover, > a.active {
+      color: $baseColor;
+    }
+  }
+  .submenu_category_title {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    font-family: $secondaryFontFamily;
+    color: $dark;
+  
+    @media (min-width: 1200px) {
+      font-size: 18px;
+    }
+    &:hover, &:focus {
+      color: $baseColor;
+    }
+    + ul {
+      margin-top: 20px;
+    }
+  }
+  
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .sf-mega_row {
+    @include clearfix;
+  }
+  
+  .sf-mega_section {
+    float: left;
+  }
+  
+  .link {
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+}
+
+.sf-mega .megamenu_module {
+  text-align: center;
+  .single-category {
+    margin-top: 0;
+    
+    .box-content > .box-heading + * {
+      margin-top: 0;
+    }
+    
+    .tab-content {
+      border: none;
+      padding-top: 0;
+    }
+    
+    .box-heading, h3, .view-all {
+      display: none;
+    }
+  }
+  
+  .product-layout {
+    margin-top: -10px;
+  }
+  
+  .product-thumb {
+    .product-flags {
+      display: none;
+    }
+    .product-countdown {
+      display: none;
+    }
+  }
+  
+  .banner-box {
+    margin-top: 0;
+  }
+  
+  .cart-button {
+    display: none;
+  }
+  
+  div.swiper-container {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.megamenu_module {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+
+//--------------------------------------------------------------
+//                      sf-with-ul styles
+//--------------------------------------------------------------
+.sf-menu > li > .sf-with-ul {
+  position: relative;
+  &:after {
+    position: relative;
+    margin-left: 6px;
+    content: '\f107';
+    vertical-align: middle;
+    font: 400 11px/14px 'FontAwesome';
+  }
+}
+
+.sf-menu ul > li > .sf-with-ul {
+  position: relative;
+  text-transform: none;
+  &:after {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -7px;
+    content: '\f054';
+    font: 400 14px/14px 'FontAwesome';
+  }
+  &:hover {
+    color: $baseColor;
+  }
+}
+
+/*============== Aside ======================*/
+
+aside, .column-left {
+  .megamenu {
+    line-height: 20px;
+    
+    h3 {
+      display: none;
+    }
+    
+    a {
+      &:hover, &:focus {
+        color: $baseColor;
+      }
+    }
+    
+    .sf-menu {
+      display: inline-block;
+      width: 100%;
+      padding: 0;
+      
+      > li {
+        width: 100%;
+        padding: 0;
+        display: inline-block;
+        + li {
+          margin: 10px 0 0;
+        }
+        > a, > span {
+          display: block;
+          font-size: 13px;
+          line-height: 18px;
+          text-transform: uppercase;
+          border-bottom: 1px solid $borderColor;
+          letter-spacing: 1.2px;
+          padding: 10px 0;
+          font-weight: normal;
+          color: $dark;
+          + * {
+            margin-top: 5px;
+            padding-top: 5px;
+          }
+        }
+        > ul {
+          margin-top: 5px;
+          padding-top: 10px;
+        }
+      }
+    }
+    li li, .sf-menu .sf-mega li {
+      > a {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 18px;
+        text-transform: none;
+      }
+      > a:hover, > a.active {
+        color: $dark;
+      }
+    }
+  }
+  
+  .sf-menu .sf-mega {
+    display: block !important;
+    height: auto !important;
+    position: relative;
+    padding: 0;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    background: none;
+    border: none;
+    z-index: 1;
+    width: auto !important;
+    li {
+      opacity: 1 !important;
+    }
+  }
+}
+
+/*============================================*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .sf-menu > li {
+    > a {
+      font-size: 10px;
+    }
+    > .sf-with-ul:after {
+      margin-left: 3px;
+    }
+  }
+  aside, .column-left {
+    ul li + li {
+      margin-top: 10px;
+    }
+  }
+  .sf-menu ul li + li {
+    margin-top: 10px;
+  }
+  .sf-mega_section {
+    width: 33% !important;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sf-menu {
+    display: none;
+  }
+  .sf-mega_section {
+    width: 100% !important;
+  }
+  .navigation .line-color {
+    display: none;
+  }
+  .column-left .megamenu {
+    display: none;
+  }
+}
+

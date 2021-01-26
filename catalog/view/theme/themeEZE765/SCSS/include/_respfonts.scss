@@ -1,0 +1,33 @@
+// unitless function to convert px to em
+
+
+$browser-context: 8;
+
+@media (min-width: 768px) {
+  $browser-context: 10;
+}
+@media (min-width: 992px) {
+  $browser-context: 12;
+}
+
+@media (min-width: 1200px) {
+  $browser-context: 13;
+}
+
+@media (min-width: 17680px) {
+  $browser-context: 14;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+}
+
+
+
+

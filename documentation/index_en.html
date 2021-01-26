@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenCart Documentation v1-0</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/responsive.css" media="screen">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" href="css/flexslider.css" media="screen">
+    <link rel="stylesheet" href="css/prettify.css" media="screen">
+    <link rel="stylesheet" href="css/prettyPhoto.css" media="screen">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery-migrate-1.1.0.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/bootstrap-affix.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" media="all"
+          rel="stylesheet" type="text/css">
+    <!--[if lt IE 8]>
+    <div style='text-align:center'><a
+            href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img
+            src="http://www.theie6countdown.com/img/upgrade.jpg" border="0" alt=""/></a></div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- header
+================================================== -->
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <article class="span4"><a class="brand" href="https://info.template-help.com/help/" target="_blank"></a></article>
+            <article class="span6">
+                <h1><img alt="" src="img/opencart_logo.png"> Foodleco shop Documentation</h1>
+            </article>
+        </div>
+    </div>
+</header>
+<div id="content">
+    <div class="bg-content-top">
+        <div class="container">
+            <!-- Docs nav
+                ================================================== -->
+            <div class="row">
+                <div class="span3">
+                    <div id="nav_container">
+                        <a href="javascript:;" id="affect_all">
+            <span class="expand">
+              <i class="icon-angle-down"></i>
+            </span>            
+            <span class="close">
+              <i class="icon-angle-up"></i>
+            </span>
+                        </a>
+                        <div class="clearfix"></div>
+                        <ul class="nav nav-list bs-docs-sidenav" id="nav">
+                            <li class="nav-item item1">
+                                <dl class="slide-down">
+                                    <dt><a href="#introduction" class="icon-info-sign">Introduction</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </li>
+                            <li class="nav-item item2">
+                                <dl class="slide-down">
+                                    <dt><a href="#prepare" class="icon-check">Prepare </a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </li>
+                            <li class="nav-item item3">
+                                <dl class="slide-down">
+                                    <dt><a href="#getting_started" class="icon-play">Getting Started </a> <i
+                                            class="icon-sample"></i></dt>
+                                    <dd>
+                                        <ul class="list">
+                                            <li><a href="#complete_install">Complete installation</a></li>
+                                            <li><a href="#template-installation">Installation over existing store</a>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="nav-item item3">
+                                <dl class="slide-down">
+                                    <dt><a class="icon-cog" href="#extension_configuration">Extensions Configuration</a>
+                                        <i class="icon-sample"></i></dt>
+                                    <dd>
+                                        <ul class="list">
+                                            <li><a href="#module_install">Module installation</a></li>
+                                            <li><a href="#banner_create">Creating banners</a></li>
+                                            <li><a href="#module_blog">Blog</a></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="nav-item item3">
+                                <dl class="slide-down">
+                                    <dt><a class="icon-eye-open" href="#zemez_extension_configuration">Zemez Extensions configuration</a>
+                                        <i class="icon-sample"></i></dt>
+                                    <dd>
+                                        <ul class="list">
+                                            <li><a href="#module_facebook">Zemez Facebook Box</a></li>
+                                            <li><a href="#module_twitter">Zemez Twitter Box</a></li>
+                                            <li><a href="#module_google-map">Zemez Google Map</a></li>
+                                            <li><a href="#module_megamenu">Zemez MegaMenu</a></li>
+                                            <li><a href="#module_newsletter_popup">Zemez Newsletter Popup</a></li>
+                                            <li><a href="#module_social_list">Zemez Social List</a></li>
+                                            <li><a href="#modification_search">Zemez Live search</a></li>
+                                            <li><a href="#modification_lazy">Zemez Lazy load</a></li>
+                                            <li><a href="#module_parallax">Zemez Parallax</a></li>
+                                            <li><a href="#module_zemez_product_slideshow">Zemez Product Slideshow</a></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="nav-item item8">
+                                <dl class="slide-down">
+                                    <dt><a href="#conclusion" class="icon-question-sign">Conclusion</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="span9">
+                    <!-- box-content
+                    ================================================== -->
+                    <div class="box-content">
+                        <!-- block-started
+                        ================================================== -->
+                        <section class="block-started" id="introduction">
+                            <h2><i class="icon-info-sign"></i> Introduction </h2>
+                            <p>Thank you for purchasing an OpenCart template. This manual consists of several parts
+                                which show the entire process of setting up and managing an OpenCart site from scratch.
+                                We did our best to make this manual as clear and easy to follow as possible. </p>
+                            <div id="opencart_cms_desc">
+                                <h4>What is OpenCart?</h4>
+                                <p>OpenCart - is an Open Source e-commerce application. OpenCart provides easy
+                                    customizations of your online store. OpenCart community includes a number of users
+                                    starting from the experienced web developers looking for the user-friendly
+                                    interface, ending with shopkeepers that start their online business for the first
+                                    time. OpenCart provides a great amount of features that allow you to control your
+                                    store. Using OpenCart tools you can easily uncover the store potential. <a
+                                            href="https://docs.opencart.com" target="_blank">More details</a></p>
+                            </div>
+                            <div id="file_structure">
+                                <h4>Template structure</h4>
+                                <p>The template package you have downloaded consists of several folders. Let's see what
+                                    each folder contains:</p>
+                                <ul class="files_structure">
+                                    <li class="folder"><i class="icon-folder-close"></i> <b>documentation</b>
+                                        <small class="muted"> - includes detailed quick-start guide on the engine and
+                                            template installation;
+                                        </small>
+                                        <ul>
+                                            <li class="file"><i class="icon-file"></i> index_en.html
+                                                <small class="muted"> - main documentation file. You are reading it at
+                                                    the moment;
+                                                </small>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                   
+                                            <li class="folder"><i class="icon-file"></i> <b> foodleco_quickstart.zip</b>
+                                                <small class="muted"> - OpenCart engine archive, template file and sample data files (for the complete installation from scratch); Contains files for version opencart 2.2.0.0, 2.3.0.2, 3.0.2.0.
+                                                </small>
+                                            </li>
+											 <li class="folder"><i class="icon-folder-close"></i> <b> foodleco_updated</b>
+												<small class="muted"> - contains the following folders/files (for version opencart 2.2.0.0, 2.3.0.2, 3.0.2.0):</small>
+												<ul>
+													<li class="folder"><i class="icon-file"></i> <b>foodleco_updated</b>
+														<small class="muted"> - sample data files (for the installation over existing store);
+														</small>
+													</li>											
+													<li class="folder"><i class="icon-file"></i> <b> foodleco_extensions</b> <small class="muted"> -the xml-files;</small>
+													</li>											
+												</ul>
+                                    </li>
+                                    <li class="folder"><i class="icon-file"></i> <b>readme.txt </b>
+                                        <small class="muted"> - contains instructions on how to extract source files;
+                                        </small>
+                                    </li>
+                                    <li class="folder"><i class="icon-file"></i> <b>foodleco_Source.zip </b> 
+                                        <small class="muted"> - archive with the source files(for version opencart 2.2.0.0, 2.3.0.2, 3.0.2.0). It includes the following folders/files:
+                                        </small>
+                                    </li>
+                                    <ul>
+                                        <li class="file"><i class="icon-file"></i> psd
+                                            <small class="muted"> Adobe Photoshop source files (.psd);</small>
+                                        </li>
+                                        <li class="file"><i class="icon-file"></i> SCSS
+                                            <small class="muted"> source files with the template CSS styles created with
+                                                the help of SCSS
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="block-templates" id="prepare">
+                            <h2><i class="icon-check"></i> Prepare</h2>
+                            <p>Before you proceed to setting up your OpenCart Web site, please make sure you are fully
+                                prepared. </p>
+                            <div id="software">
+                                <h4>Software</h4>
+                                <p>To feel comfortable working with the OpenCart template, we recommend downloading all
+                                    the applications required. You
+                                    can see the list of required software at the template live demo page. The
+                                    requirements may vary for different
+                                    templates, so we'll tell you here what is needed in general:</p>
+                                <ol>
+                                    <li>You may need the Adobe Photoshop application. It is used to edit .PSD source
+                                        files and it is necessary if you want to edit template design graphics and
+                                        images
+                                    </li>
+                                    <li>To edit template source code files, you need some code editor like Adobe
+                                        Dreamweaver, Notepad++, Sublime Text, etc
+                                    </li>
+                                    <li>To upload files to the hosting server, you may need an FTP Manager like Total
+                                        Commander, FileZilla, CuteFTP, etc.
+                                    </li>
+                                    <li>Proceed with the following guide to unzip the archives, using
+                                        <a href="https://info.template-help.com/help/extract-archived-files-windows-os.html" target="_blank">WinZip(PC)</a>
+                                        and <a href="https://info.template-help.com/help/extract-archived-files-mac-os.html" target="_blank">StuffitExpander(MAC)</a>.
+                                    </li>
+                                </ol>
+                            </div>
+                            <div id="hosting">
+                                <h4>Hosting</h4>
+                                <p>As OpenCart engine is a PHP/MySQL based application, you need to prepare a hosting
+                                    environment.</p>
+                                <p>If you have live hosting, please make sure it matches <a
+                                        href="https://docs.opencart.com/display/opencart/System+requirements"
+                                        target="_blank">OpenCart system requirements</a> and is ready to be used for
+                                    OpenCart websites. </p>
+                                <p>Alternatively, you can run OpenCart locally on your computer using the local server.
+                                    To create a local hosting server, please use the localhost applications such as <b>WAMP</b>,
+                                    <b>AppServ</b>, <b>MAMP</b>, etc. Any of those can be easily installed as any other
+                                    program and used to run OpenCart. </p>
+                                <p>Please check the tutorials below on how to configure the local development
+                                    environment :</p>
+                                <ul class="unstyled">
+                                    <li><i class="icon-film"> </i><a
+                                            href="https://info.template-help.com/help/how-to-install-appserv-web-development-environment.html"
+                                            target="_blank">How to install AppServ web development environment</a></li>
+                                    <li><i class="icon-film"> </i><a
+                                            href="https://info.template-help.com/help/how-to-install-wamp-web-development-environment.html"
+                                            target="_blank">How to install WAMP web development environment</a></li>
+                                    <li><i class="icon-film"> </i><a
+                                            href="https://info.template-help.com/help/how-to-install-xamp-web-development-environment.html"
+                                            target="_blank">How to install XAMP web development environment</a>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="block-templates" id="getting_started">
+                            <h2><i class="icon-play"></i> Getting Started </h2>
+                            <!-- Full OpenCart Installation -->
+                            <div id="complete_install">
+                                <h3>Complete installation</h3>
+                                <p>This kind of installation can be used in case you do not have a ready to use OpenCart
+                                    store. The 'foodleco_quickstart.zip' archive contains OpenCart engine files and theme
+                                    files including sample data, so you do not need to install an OpenCart engine
+                                    separately. Template sample data will make your site look just like our demo
+                                    template including all the sample products, modules and site configuration..</p>
+                                <!-- Creating database -->
+                                <article id="creating-database">
+                                    <h4>Creating a Database</h4>
+                                    <p>When all the files are uploaded to the server, you need to prepare a newly
+                                        created database for you OpenCart website. It can be created using a database
+                                        management tool in your hosting cPanel (<i>usually
+                                            PhpMyAdmin</i>).</p>
+                                    <p>You can create a new database in phpMyAdmin following the simple 3 steps listed
+                                        below (check the next slides):</p>
+                                    <ol class="list">
+                                        <li>In order to get to the database list, click Databases button in the top
+                                            navigation menu .
+                                        </li>
+                                        <li>Enter a new database name in the "Create new database" field.</li>
+                                        <li>On the right side click the Create button.</li>
+                                    </ol>
+                                    <p>You should see the newly created database in the list. In order to get the access
+                                        to the database, click its name:</p>
+                                    <p>&nbsp;</p>
+                                    <div class="flexslider clearfix img-polaroid">
+                                        <ul class="slides">
+                                            <li>
+                                                <img src="img/database-create-1.jpg" alt=""/>
+                                                <div class="flex-caption">
+                                                    <p>1. Open the "Databases" tab, in order to get to the list of
+                                                        databases.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img src="img/database-create-2.jpg" alt=""/>
+                                                <div class="flex-caption">
+                                                    <p>2. Enter a database name.<br>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img src="img/database-create-3.jpg" alt=""/>
+                                                <div class="flex-caption">
+                                                    <p>3. Click "Create".</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img src="img/database-create-4.jpg" alt=""/>
+                                                <div class="flex-caption">
+                                                    <p>4. The newly created database appears in the list. Click the
+                                                        database name to get the access to the
+                                                        database.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <div class="box-info"><p>Feel free to check the detailed video guide <i
+                                            class="icon-film"> </i> <a
+                                            href="https://info.template-help.com/help/how-to-create-a-database.html" target="_blank">How to create a
+                                        database</a>.</p></div>
+                                    <span>In case of any issues, please contact your hosting provider for further support </span>
+                                </article>
+                                <!-- Uploading files -->
+                                <article id="uploading">
+                                    <h4>Uploading the template</h4>
+                                    <p>In order to start working with OpenCart, you need to upload the files to your
+                                        server. You can do it via your hosting cPanel or using an alternative FTP
+                                        client</p>
+                                    <ol>
+                                        <li>Open the template folder.</li>
+                                        <li>Go to the 'foodleco_theme' folder and unzip the 'foodleco_quickstart.zip' archive to
+                                            your computer. Upload the content of the archive to your server (
+                                            <i class="icon-film"> </i> <a href="https://info.template-help.com/help/how-upload-files-server-2.html"
+                                                                          target="_blank">How to upload files to a
+                                                server</a>, <i class="icon-film"> </i> <a
+                                                    href="https://info.template-help.com/help/how-to-upload-files-to-a-server-using-cpanel-webhost-manager-whm.html"
+                                                    target="_blank">How to upload files to a server using cPanel
+                                                (WebHost Manager, WHM) </a>
+                                            ).
+                                        </li>
+                                        <li>Set the correct permissions to your OpenCart folders and files:
+                                        </li>
+                                        <li>You should see the following screen:
+                                            <ol>
+                                                <li>system/cache/;</li>
+                                                <li>system/logs/;</li>
+                                                <li>system/download/;</li>
+                                                <li>system/upload/;</li>
+                                                <li>image/;</li>
+                                                <li>image/cache/;</li>
+                                                <li>image/catalog/;</li>
+                                                <li>config.php;</li>
+                                                <li>admin/config.php.</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                    <span>The permissions should be set to CHMOD 755 or 777 depending on the server configuration. In order to do so, select all you files and folders and find the buttons "Change Permissions" if you are working in File Manager. If you are working with Linux - use command chmod -R 777 "folder_name".
+                                    </span>
+                                </article>
+                                <!-- OpenCart installation -->
+                                <article id="opencart-cms-installation">
+                                    <h4>OpenCart installation</h4>
+                                    <p>Open any browser and enter the OpenCart directory path in the browser address bar
+                                        (<i>for example http://your_domain_name/opencart</i>). You will see the OpenCart
+                                        installation page: </p>
+                                    <ol>
+                                        <li>Installation license</li>
+                                        <li>Preliminary stage</li>
+                                        <li>Configuration</li>
+                                        <li>Ready!</li>
+                                    </ol>
+                                    <p>&nbsp;</p>
+                                    <h5 id="opencart-install-configuration">IInstallation license</h5>
+                                    <p>Check an OpenCart license agreement and click the <strong
+                                            >Continue</strong> button if you agree</p>
+                                    <p>&nbsp;</p>
+                                    <figure class="img-polaroid"><img src="img/opencart-engine-installation-initital.jpg" alt=""></figure>
+                                    <p>&nbsp;</p>
+                                    <h5 id="opencart-install-database">Preliminary stage</h5>
+                                    <p>At the second step OpenCart is going to check if your hosting settings match the
+                                        required ones and if the files and folders permissions are correct.</p>
+                                    <p>&nbsp;</p>
+                                    <figure class="img-polaroid"><img src="img/opencart-engine-installation-step2.jpg"
+                                                                      alt=""></figure>
+                                    <p>&nbsp;</p>
+                                    <h5 id="opencart-install-overview">Configuration
+                                    </h5>
+                                    <p>&nbsp;</p>
+                                    <p>
+                                        At the Configuration step you need to input your database details. The MySQL
+                                        database was created on the preparation step, now you need to enter the details
+                                        you have used:
+                                    </p>
+                                    <ol>
+                                        <li>database server;</li>
+                                        <li>database name;</li>
+                                        <li>database username;</li>
+                                        <li>password.</li>
+                                    </ol>
+                                    <p>
+                                        If there are any issues with the database details, contact your hosting
+                                        provider.
+                                    </p>
+                                    <p>You need to create the administrator user for your store. Enter the name,
+                                        password and administrators e-mail address. The details you enter will be used
+                                        to log into your store backend. </p>
+                                    <figure class="img-polaroid"><img src="img/opencart-engine-installation-step3.jpg"
+                                                                      alt=""></figure>
+                                    <p>&nbsp;</p>
+                                    <h5 id="opencart-install-complete">Ready!</h5>
+                                    <p>&nbsp;</p>
+                                    <p>This is the last OpenCart installation step. You will see 2 options: you can be
+                                        redirected to your OpenCart website or to the OpenCart admin panel.</p>
+                                    <figure class="img-polaroid"><img src="img/opencart-engine-installation-step4.jpg"
+                                                                      alt=""></figure>
+                                    <p>You can use the following installation instructions: <i class="icon-film"> </i>
+                                        <a
+                                                href="https://info.template-help.com/help/opencart-how-to-install-opencart-engine-and-a-template-using-fullpackage.html"
+                                                target="_blank">OpenCart. How to install OpenCart engine and a template
+                                            (using “fullpackage”) </a>.</p>
+                                    <p>In order to set access restrictions, change the permissions to 644 and 444 for
+                                        the following files:</p>
+                                    <ul>
+                                        <li>config.php</li>
+                                        <li>index.php</li>
+                                        <li>admin/config.php</li>
+                                        <li>admin/index.php</li>
+                                        <li>system/startup.php.</li>
+                                    </ul>
+                                    <div class="box-error"><span>Remove the "install" folder from your server. You will not be able to enter the store until the folder remains on the server.</span>
+                                    </div>
+                                    <p>The installation is complete. In order to open the store page, enter <strong>domain
+                                        name</strong> in the browser address bar. In order to access OpenCart admin
+                                        panel, enter <strong>domain_name/admin</strong>. </p>
+                                </article>
+                            </div>
+                            <div class="block-templates" id="template-installation">
+                                <h3>Installation over existing store</h3>
+                                <p>
+                                    In case you already have a ready OpenCart store and you just need to change its
+                                    appearance with the help of the theme, use the following installation method.
+                                </p>
+                                <div class="box-notification"><span>Make sure your OpenCart version is corresponding to the template requirements. All the OpenCart version are available at the<a
+                                        href=" https://www.opencart.com/index.php?route=download/download "
+                                        target="_blank" class="spec_link"> OpenCart official website</a>.</span></div>
+                                <br/>
+                                <ol>
+                                    <li>In order to install an OpenCart template, you need to upload the files to the
+                                        server. You can find the <strong>&quot;foodleco_updated.zip&quot;</strong>
+                                        archive in the OpenCart folder, it should be unzipped to your computer. <br/>
+                                    </li>
+                                    <li>
+                                        After that, upload the unzipped files to the root directory of the OpenCart
+                                        installation.
+                                        You can check the detailed video instructions on <a
+                                            href="https://info.template-help.com/help/how-upload-files-server-2.html" target="_blank"> how to
+                                        upload files to the server</a>.
+                                        <br/>
+                                        <p><strong class="info-box">the template files will not affect your store
+                                            content in any way;</strong></p>
+                                    </li>
+                                    <li>
+                                        Open your website with any browser and add /install at the end of your site URL
+                                        in the browser address bar ( for example, <strong><em>http://your_domain_name/opencart/install</em></strong>
+                                        )
+                                    </li>
+                                    <li>Click the
+                                        <strong>Continue</strong>
+                                        button. It may take some time.
+                                    </li>
+                                    <li>Enter the administration panel, navigate to <strong><em>Extensions -> Extension
+                                        Installer</em></strong>
+                                        and upload the <strong><em>foodleco_extensions</em></strong> archive files.
+                                        When all the files have been
+                                        uploaded, navigate to <strong><em>Extensions -> Modifications</em></strong> and
+                                        press <strong><em>refresh</em></strong> in the top
+                                        right side of the screen;
+                                    </li>
+                                    <li>On the next step navigate to <strong><em>System->Settings</em></strong>, go to
+                                        the Store tab and select <strong><em>theme651</em></strong> template in the
+                                        Template field.
+                                    </li>
+                                </ol>
+                                <div class="box-info"><p><strong>Feel free to check the detailed installation
+                                    guide:</strong> <a
+                                        target="_blank"
+                                        href="https://info.template-help.com/help/opencart-how-to-install-a-template-over-the-existing-store-using-update-package.html">OpenCart.
+                                    How to install a template over the existing store (using “update” package)</a>.</p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="block-templates" id="extension_configuration">
+                            <h2><i class="icon-cog"></i> Extensions configuration</h2>
+                            <div id="module_install">
+                                <h3>Module installation</h3>
+                                <p>Module installation process includes several steps. Navigate to your administration
+                                    panel (by adding /admin in the browser address bar - www.yoursite.com/admin). Go to
+                                    <strong>Extensions</strong> and in the drop-down menu select
+                                    <strong>Modules</strong> You will see the list of
+                                    installed and ready-to-install modules. If you see the <strong>Uninstall</strong>
+                                    button next to any
+                                    module, it means that the module is already installed and you can modify module
+                                    settings by clicking <strong>Edit</strong>. By clicking the <strong>Install</strong>
+                                    button, you will start module
+                                    installation process. In order to remove the module, you have to click the <strong>Uninstall</strong>
+                                    button, so the module will be uninstalled. </p>
+                                <div class="box-notification">
+                                    <span>
+                                        Note that uninstalling the module means all the settings added earlier will be erased and cannot be reverted back.
+                                    </span>
+                                </div>
+                                <figure class="img-polaroid"><img
+                                        src="img/install_1.jpg" alt=""></figure>
+                                <p>When the installation is finished, you need to configure the module. The settings can
+                                    differ depending on the specific module, but the <strong>Status</strong> field is
+                                    the same for all - the field allows to turn the module on/off.</p>
+                                <figure class="img-polaroid"><img
+                                        src="img/edit-module_1.jpg" alt=""></figure>
+                                <p>
+                                    In order to add the module to a certain page, you need to go to the list of pages.
+                                    It can be done in 2 ways:
+                                </p>
+                                <ol>
+                                    <li>
+                                        <span>In the side menu navigate to <strong>System -> Design -> Layout;</strong></span>
+                                        <figure class="img-polaroid"><img
+                                                src="img/page-selecting-way.jpg" alt=""></figure>
+                                    </li>
+                                    <li>
+                                        <span>In the nodule section click the link <strong>here</strong>.</span>
+                                        <figure class="img-polaroid"><img
+                                                src="img/page-selecting-way-2.jpg" alt=""></figure>
+                                    </li>
+                                </ol>
+                                <p>In the page list select the page where you want to place the module and click
+                                    <strong>Edit</strong></p>
+                                <figure class="img-polaroid"><img
+                                        src="img/list-of-pages.jpg" alt=""></figure>
+                                <p>You can see a list of the modules and module positions that are already added to the
+                                    page</p>
+                                <figure class="img-polaroid"><img
+                                        src="img/layout.jpg" alt=""></figure>
+                                <p>The following module positions are available (respectively to the display order):</p>
+                                <ol class="list-2">
+                                    <li>Header Top (after the Header section);</li>
+                                    <li>Column-left (left side panel);</li>
+                                    <li>Column-right (right side panel);</li>
+                                    <li>Content-top;</li>
+                                    <li>Content-bottom;</li>
+                                    <li>Footer.</li>
+                                </ol>
+                                <p>
+                                    The <strong>Sort Order</strong> field shows the display order of the modules
+                                    assigned to the same
+                                    position. In order to add a module to a page, click <strong>Add Module</strong>.
+                                    Select the required
+                                    module and module position and click <strong>Save</strong>. The module installation
+                                    is completed.
+                                </p>
+                            </div>
+                            <div id="banner_create">
+                                <h3>Creating banners</h3>
+                                <h4>ZemezDescription for banners modification</h4>
+                                <p>The modification allows to add banner description. In order to turn the modification
+                                    off or remove it, navigate to <strong>Extensions -> Modifications</strong>, find the
+                                    "ZemezDescription
+                                    for banners" extension and click <strong>Disable</strong> or <strong>Delete</strong>.
+                                </p>
+                                <p>Some of the modules include a field to select a banner. Navigate to <strong>System ->
+                                    Design -> Banner</strong> section
+                                </p>
+                                <p> The page displays the list of the created banners. To create a new banner, click
+                                    <strong>Add New</strong>. To edit existing banner, click <strong>Edit</strong></p>
+                                <figure class="img-polaroid"><img
+                                        src="img/banner-list.jpg" alt=""></figure>
+                                <p>Specify the Banner Name, Status and click <strong>Add Banner</strong>. You will see
+                                    the table where
+                                    you should enter the following values: </p>
+                                <ol>
+                                    <li>Banner Name;</li>
+                                    <li>Description - the text that shows up in a banner (it supports html-markup);</li>
+                                    <li>Link - specify a link relative to the site URL (for example,
+                                        index.php?route=product/product&product_id=47), this field is not required;
+                                    </li>
+                                    <li>Image;</li>
+                                    <li>Banner order - there can be more than one banner, the field is required to fill
+                                        in.
+                                    </li>
+                                </ol>
+                                <p>In order to delete the banner, click <strong>Remove</strong>. After the banner has
+                                    been created you can use it for different modules.</p>
+                                <figure class="img-polaroid"><img
+                                        src="img/edit-banner.jpg" alt=""></figure>
+                            </div>                         
+                            
+                            <div id="module_blog">
+                                <h3>Blog</h3>
+                                <p>The following extension allows you to manage posts and news connected to your store</p>
+                                <h6>Main features:</h6>
+                                <ol>
+                                    <li><span>creating articles;</span></li>
+                                    <li><span>creating categories;</span></li>
+                                    <li><span>creating authors;</span></li>
+                                    <li><span>commenting articles and replying to the comments;</span></li>
+                                    <li><span>view report;</span></li>
+                                    <li><span>displaying products and articles related to the certain article;</span>
+                                    </li>
+                                </ol>
+                                <p>In order to change Blog global settings navigate to <strong>System->Settings</strong>.
+                                    Select the store where you want to change the settings out of the list and click
+                                    <strong>Edit</strong>.</p>
+                                <h6>Blog settings can be seen in Blog section:</h6>
+                                <ol>
+                                    <li><strong>Status </strong> - blog status (enabled\disabled);</li>
+                                    <li><strong>Limit </strong> - number of posts per page;</li>
+                                    <li><strong>Description Symbol Limit </strong> - number of symbols in the article
+                                        description on the main Blog page (not on single article!);
+                                    </li>
+                                    <li><strong>Comment Auto approval </strong> - enables/disables automatic comment
+                                        approval by administrator;
+                                    </li>
+                                    <li><strong>Author Information </strong> - enables/disables information about the
+                                        author on article page;
+                                    </li>
+                                    <li><strong>Related Article </strong> - enables/disables related articles;</li>
+                                    <li><strong>Share with social site </strong> - enables/disables social share
+                                        buttons;
+                                    </li>
+                                </ol>
+                                <figure class="img-polaroid"><img src="img/blog-global-edit.jpg" alt=""></figure>
+                                <p>In the side panel you can see new tab - <strong>Simple Blog</strong>. It contains the
+                                    following options:</p>
+                                <ol>
+                                    <li><strong>Article </strong> - list of created articles;</li>
+                                    <li><strong>Category </strong> - list of created categories;</li>
+                                    <li><strong>Author </strong> - list of created authors;</li>
+                                    <li><strong>Article </strong> - Comment - list of added comments;</li>
+                                    <li><strong>Report </strong> - views report.</li>
+                                </ol>
+                                <h4>ZemezBlog Articles</h4>
+                                <p>This module allows to display blog articles by categories.</p>
+                                <figure class="img-polaroid"><img src="img/zemez-blog-articles-view.jpg" alt=""></figure>
+                                <p>After the module is installed you can configure it on the module settings page.</p>
+                                <h5>Settings:</h5>
+                                <ol>
+                                    <li><strong>Status </strong> - module status (enabled\disabled).</li>
+                                    <li><strong>Module Name</strong> - the name of the module;</li>
+                                    <li><strong>Article limit</strong> - number of articles to display;</li>
+                                    <li><strong>Readmore Button Show</strong> - enables/disables Read more button;</li>
+                                    <li><strong>Date Show</strong> - enables/disables date;</li>
+                                    <li><strong>Author Show </strong> - enables/disables article author;</li>
+                                    <li><strong>Comments Show </strong> - enables/disables the number of comments per
+                                        article;
+                                    </li>
+                                    <li><strong>Image Show </strong> - enables/disables article image;</li>
+                                    <li><strong>Image Width </strong> - image width;</li>
+                                    <li><strong>Image Height </strong> - image height;</li>
+                                    <li><strong>Description Symbol Limit </strong> - number of symbols in article
+                                        description;
+                                    </li>
+                                    <li><strong>Category </strong> - you can set the category to pull articles from.
+                                        There is also a possibility to display most popular articles or recently added
+                                        articles.
+                                    </li>
+                                </ol>
+                                <figure class="img-polaroid"><img src="img/zemez-blog-articles-edit.jpg" alt=""></figure>
+                                <h4>ZemezBlog Category</h4>
+                                <p>This module allows you to display blog articles according to different options.</p>
+                                <figure class="img-polaroid"><img src="img/zemez-blog-category-view.jpg" alt=""></figure>
+                                <p>After the module is installed you can configure it on the module settings page.</p>
+                                <h5>Settings:</h5>
+                                <ol>
+                                    <li><strong>Status </strong> - module status (enabled\disabled).</li>
+                                    <li><strong>Module Name </strong> - name of the module;</li>
+                                    <li><strong>Search Article </strong> - enables/disables search.</li>
+                                </ol>
+                                <figure class="img-polaroid"><img src="img/zemez-blog-category-edit.jpg" alt=""></figure>
+                            </div>
+						</section>
+						<section class="block-templates" id="zemez_extension_configuration">
+							<h2><i class="icon-cog"></i>Zemez Extensions configuration</h2>
+                            <div id="module_facebook">
+                                <h3>ZemezFacebook Box</h3>
+                                <p>The module allows to display Facebook like box that shows the fans who like your website and brand.</p>
+                                <figure class="img-polaroid"><img src="img/zemez-facebook-view.jpg" alt=""></figure>
+                                <p>when the module is installed, you can configure it on the module settings page.</p>
+                                <h5>Settings:</h5>
+                                <ol>
+                                    <li><strong>Module Name </strong> - the name of the module;</li>
+                                    <li><strong>Facebook Page URL </strong> - Facebook page link</li>
+                                    <li><strong>Color Scheme </strong> - color scheme (light, dark)</li>
+                                    <li><strong>Show Faces </strong> - show users faces (yes, no);</li>
+                                    <li><strong>Show Stream </strong> - show recent posts (yes, no);</li>
+                                    <li><strong>Show Header </strong> - show block titles (yes, no);</li>
+                                    <li><strong>Show Border </strong> - show block border (yes, no);</li>
+                                    <li><strong>Width </strong> - block width (px);</li>
+                                    <li><strong>Height </strong> - block height (px);</li>
+                                    <li><strong>Status </strong> - module status (enabled/disabled)</li>
+                                </ol>
+                                <figure class="img-polaroid"><img src="img/zemez-facebook-edit.jpg" alt=""></figure>
+                            </div>
+                            <div id="module_twitter">
+                                <h3>ZemezTwitter Box</h3>
+                                <p>This module allows you to display posts from Twitter. It helps your site visitors to be aware of the latest updates and messages in Twitter social network.</p>
+                                <figure class="img-polaroid"><img src="img/zemez-twitter-view.jpg" alt=""></figure>
+                                <p>When the module is installed, you can configure it on the module configuration page.</p>
+                                <h5>Settings:</h5>
+                                <ol>
+                                    <li><strong>Module Name </strong> - the name of the module;</li>
+                                    <li><strong>Twitter Page URL </strong> - Twitter account link;</li>
+                                    <li><strong>Widget ID </strong> - you can get the Widget ID <a href="https://twitter.com/settings/widgets" target="_blank" rel="nofollow">here</a>;
+                                    </li>
+                                    <li><strong>Tweet Limit </strong> - number of tweets;</li>
+                                    <li><strong>Color Scheme </strong> - color scheme (light, dark);</li>
+                                    <li><strong>Width </strong> - block width (px);</li>
+                                    <li><strong>Height </strong> - block height (px);</li>
+                                    <li><strong>Status </strong> - module status (enabled/disabled).</li>
+                                </ol>
+                                <figure class="img-polaroid"><img src="img/zemez-twitter-edit.jpg" alt=""></figure>
+                            </div>
+                            <div id="module_google-map">
+                                <h3>ZemezGoogle Map</h3>
+                                <p>This module allows you to add a Google map  to your website. (Zones can be added only for version 3.0.2.0) </p>
+                                <p>The center of the map and one of the markers are defined in store settings -
+                                    <strong>System->Settings</strong>, in the <strong>General</strong> tab, <strong>Geocode</strong>
+                                    field. Once you click on a marker, you will see the pop up window with the <strong>Address</strong> bar.</p>
+                                <figure class="img-polaroid"><img src="img/zemez-googlemap-view.jpg" alt=""></figure>
+                                <h5>Settings:</h5>
+                                <ol>
+                                    <li><strong>Module Name </strong> - the name of the module;</li>
+                                    <li><strong>Google Map API key </strong> - API key for Google Map. You can find more details at the
+                                        <a href="https://developers.google.com/maps/documentation/javascript/tutorial#api_key"
+                                           target="_blank">official website</a> ;
+                                    </li>
+                                    <li><strong>Status </strong> - module status (enabled/disabled);</li>
+                                    <li><strong>Map Type </strong> - map type. There are 4 options available:
+                                        <ul>
+                                            <li><strong>Roadmap </strong> - road map, the one used by default;</li>
+                                            <li><strong>Terrain (Landscape) </strong> - topographical map based on terrain information;
+                                            </li>
+                                            <li><strong>Hybrid </strong> - a combination of a basic map and satellite images;
+                                            </li>
+                                            <li><strong>Satellite </strong> - Google Earth images taken by satellite;
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Map Zoom </strong> - numerical value. Initial scaling used when
+                                        displaying a map. A value of 0 corresponds to the lowest level of scaling. When
+                                        increasing this value, map zooms in;
+                                    </li>
+                                    <li><strong>Sensor </strong> - indicates whether sensor that determines users
+                                        location is used or not.
+                                    </li>
+                                    <li><strong>Map Width </strong> - the width of the map. You should specify unit of
+                                        measurement (% or px);
+                                    </li>
+                                    <li><strong>Map Height </strong> - the height of the map. You should specify unit of
+                                        measurement (% or px);
+                                    </li>
+                                    <li><strong>Map Styles </strong> - sets the style of the map. The variety of styles
+                                        is available at
+                                        <a href="https://snazzymaps.com/" rel="nofollow" target="_blank">https://snazzymaps.com/</a>
+                                        ;
+                                    </li>
+                                    <li><strong>Disable UI </strong> - enables/disables user interface by default;</li>
+                                    <li><strong>Scrollwheel </strong> - enables/disables map scaling with the help of
+                                        mouse wheel;
+                                    </li>
+                                    <li><strong>Draggable </strong> - enables/disables the option to move the map;</li>
+                                    <li><strong>Marker Image </strong> - sets marker image. If you leave the field
+                                        empty, it will apply default marker;
+                                    </li>
+                                    <li><strong>Active Marker Image </strong> - sets marker image when clicking;</li>
+                                    <li><strong>Marker Image Width </strong> - sets marker image width;</li>
+                                    <li><strong>Marker Image Height </strong> - sets marker image height.</li>
+                                </ol>
+                                <p>
+                                    In order to add a marker, click <strong>Add New</strong>. In the
+                                    <strong>Geocode</strong> field specify marker
+                                    coordinates (latitude, longitude - Example: 40.6700 , -73.9400 ) and in the <strong>Address</strong>
+                                    field enter the information that will show up when clicking the marker. Required
+                                    coordinates can be found at <a href="https://www.mapcoordinates.net" rel="nofollow"
+                                                                   target="_blank">http://www.mapcoordinates.net</a> .
+                                    In order to remove the
+                                    marker, click <strong>Delete Marker</strong>.
+                                </p>
+                                <figure class="img-polaroid"><img
+                                        src="img/zemez-googlemap-edit_1.jpg" alt=""></figure>
+                            </div>
+                            <div id="module_megamenu">
+                                <h3>ZemezMegaMenu</h3>
+                                <p>This module allows to display the categories and 2 levels of the subcategories in the
+                                    sidebar panel and including the images of the first level subcategories.</p>
+                                <p>When the module is installed, you can enable/disable it on the module settings
+                                    page.</p>
+                                <figure class="img-polaroid"><img
+                                        src="img/zemez-mega-menu-view.jpg" alt=""></figure>
+                            </div>
+                            <div id="module_newsletter_popup">
+                                <h3>ZemezNewsletter Popup</h3>
+                                <p>This module allows to add pop-up window with an offer to subscribe to the email
+                                    newsletter when someone is viewing your site. The window is not showing up for
+                                    authorized (logged in) users and those who has already subscribed.</p>
+                                <figure class="img-polaroid"><img
+                                        src="img/zemez-newsletter-popup-view.jpg" alt=""></figure>
+                                <p>When the module is installed, you can configure it on the module configuration
+                                    page.</p>
+                                <ol>
+                                    <li><strong>Module Name</strong> - the name of the module;</li>
+                                    <li><strong>Background Image </strong> - background image set for the popup;</li>
+                                    <li><strong>Background image width </strong> - background image width;</li>
+                                    <li><strong>Background image height </strong> - background image height;</li>
+                                    <li><strong>Cookie Storage Time </strong> - cookie storage time;</li>
+                                    <li><strong>Heading Title </strong> - popup heading;</li>
+                                    <li><strong>Description </strong> - popup description;</li>
+                                    <li><strong>Status </strong> - module status (enabled/disabled).</li>
+                                </ol>
+                                <figure class="img-polaroid"><img
+                                        src="img/zemez-newsletter-popup-edit.jpg" alt=""></figure>
+                            </div>
+                            <div id="module_social_list">
+                                <h3>ZemezSocial List</h3>
+                                <p>This module allows to display the list of the popular social network links</p>
+                                <div class="box-error">
+                                    <span>In case you install "update" theme version, template sample content (the list of the social network links) will not be available. In order to configure the module properly, make sure to fill in the required information.</span>
+                                </div>
+                                <p>When the module is installed, you can configure it on the module configuration page.
+                                    If you leave the field empty, the element will not show up in the list. </p>
+                                <h5>Settings:</h5>
+                                <ol>
+                                    <li><strong>Youtube</strong> - YouTube page link;</li>
+                                    <li><strong>Facebook</strong> - Facebook page link;</li>
+                                    <li><strong>Google Plus</strong> - Google Plus page link;</li>
+                                    <li><strong>Twitter</strong> - Twitter page link;</li>
+                                    <li><strong>Pinterest</strong> - Pinterest page link;</li>
+                                    <li><strong>Instagram</strong> - Instagram page link;</li>
+                                    <li><strong>Vimeo</strong> - Vimeo page link;</li>
+                                    <li><strong>Status</strong> - module status (enabled/disabled).</li>
+                                </ol>
+                                <figure class="img-polaroid"><img
+                                        src="img/zemez-social-list-edit.jpg" alt=""></figure>
+                            </div>
+                            <div id="modification_search">
+                                <h3>ZemezLive search</h3>
+                                <p>ZemezLive search modification allows to display searched product(s) without re-loading
+                                    the page. In order to remove it or disable it, navigate to <strong>Extensions ->
+                                        Modifications</strong>, select the modification from the list, and click
+                                    <strong>Disable</strong> or
+                                    <strong>Delete</strong>.</p>
+                                <figure class="img-polaroid"><img
+                                        src="img/zemez-live-view.jpg" alt=""></figure>
+                            </div>
+                            <div id="modification_lazy">
+                                <h3>ZemezLazy load</h3>
+                                <p>Modification that allows to load product images at the time they appear when
+                                    scrolling the website. This extension allows to speed up website performance. In
+                                    order to change preloader image, you should replace the
+                                    <strong>lazy_loader.gif</strong> file in the
+                                    <strong>catalog/view/theme/theme651/image/</strong> folder. </p>
+                            </div>
+                            <div id="module_parallax">
+								<h3>ZemezParallax</h3>
+								<p>This module allows you to create areas with parallax effect on pages. The module provides the ability to display images, video and other modules. The module supports the unlimited number of the layers, any of which can move in different directions and at different speeds.</p>
+								<figure class="img-polaroid">
+									<img src="img/zemez_parallax.jpg" alt=""/>
+								</figure>
+								<h5>ZemezParallax module configuration:</h5>
+								<h6>General settings:</h6>
+								<ol class="index-list">
+									<li> <strong>Module Name</strong> name of the module; </li>
+									<li> <strong>Status</strong> module status (enabled/disabled); </li>
+									<li> <strong>Image</strong> background (main) parallax image; </li>
+									<li> <strong>Width</strong> background image width; </li>
+									<li> <strong>Height</strong> background image height; </li>
+								</ol>
+								<h6>Additional module settings:</h6>
+								<ol class="index-list">
+									<li>
+										<p>In order to create a new layer you need to press on <strong>"Add Layer"</strong> button.</p>
+										<figure class="img-polaroid">
+											<img src="img/zemez_parallax_edit-1.jpg" alt=""/>
+										</figure>
+										<p>After adding the layer specify the following settings:</p>
+										<h5>Layer configuration:</h5>
+										<ol class="index-list">
+											<li>
+												<strong>Type</strong> layer type;										   
+											</li>
+											<li>
+												<strong>Description</strong> layer description;
+											</li>
+											<li>
+												<strong>Image</strong> layer image;
+											</li>
+											<li>
+												<strong>Width</strong> layer image width;
+											</li>
+											<li>
+												<strong>Height</strong> layer image height;
+											</li>										
+										</ol>
+									</li>
+									<li>
+										<p>In order to display module in the layer, you need to press on the <strong>"Add Module"</strong> button in the appropriate layer.</p>
+										<figure class="img-polaroid">
+											<img src="img/zemez_parallax_edit-2.jpg" alt=""/>
+										</figure>
+										<p>After pressing the <strong>"Add Module"</strong> button, <strong>"Added Module name"</strong> field will become available, you need to select module here, to display it in the current layer.</p>
+									</li>
+								</ol>
+                            </div> 
+							
+							<div id="module_zemez_product_slideshow">
+								<h3>Zemez Product Slideshow</h3>
+								<p>This module allows you to display products with options.</p>
+								<figure class="img-polaroid"><img src="img/zemez_product_slideshow_edit" alt=""/></figure>
+								<h5>ZemezProduct Slideshow module configuration:</h5>
+								<h6>General settings:</h6>
+								<ol class="index-list">
+									<li> <strong>Module Name</strong> name of the module; </li>
+									<li> <strong>Status</strong> module status (enabled/disabled); </li>
+									 <li><strong>Limit</strong> - number of products to display;</li>
+									<li> <strong>Products</strong> select from the list; </li>
+									<li> <strong>Width</strong> image width; </li>
+									<li> <strong>Height</strong> image height; </li>
+								</ol>
+								<figure class="img-polaroid"> <img src="img/zemez_product_slideshow.jpg" alt=""/> </figure>
+                            </div>							
+							
+                        </section>
+                        <section id="conclusion" class="block-templates">
+                            <h2><i class="icon-question-sign"></i> Conclusion
+                            </h2>
+                            <p>OpenCart is a multifunctional, quick and understandable solution for the users that would like to start online business. It is a great solution for your online store. The default engine package contains all modules necessary for successful sales. Open source allows you to offer really outstanding merchant possibilities for your customers.</p>
+                            <h5>Useful resources:</h5>
+                            <ol>
+                                <li><a target="_blank" href="https://www.opencart.com/">The Official OpenCart website</a>
+                                </li>
+                                <li><a target="_blank" href="https://forum.opencart.com/">OpenCart community forum</a>
+                                </li>
+                                <li><a href="https://info.template-help.com/help/ecommerce/opencart/opencart-tutorials/" target="_blank">OpenCart
+                                    tutorials</a></li>
+                            </ol>
+                            <h5>Can't load Google Fonts:</h5>
+                            <ol>
+                                <li><span>Open <strong>catalog\view\theme\theme651\stylesheet\stylesheet.css</strong> file. </span>
+                                </li>
+                                <li><span>Locate the line: </span>
+                                    <code>//fonts.googleapis.com/css?family=[---your_web_font_name---]</code></li>
+                                <li><span>Replace it with the following:</span>
+                                    <code>//fonts.useso.com/css?family=[---your_web_font_name---]</code></li>
+                            </ol>
+                            <h5>Validation</h5>
+                            <div class="box-info">
+                                <span>Both HTML markup and CSS styles used in our templates are semantically correct and valid. However some W3C errors can still take place. Making code 100% W3C valid eliminates the usage of modern website technologies as CSS3 features and HTML5 markup. Our goal is to deliver rich user experience with high quality templates and sometimes we have to break some rules.</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer
+ ================================================== -->
+<footer>
+    <div class="container">
+        <div class="span12">
+            <span>OpenCart Documentation</span><br/>
+            &copy; <span id="date"></span> <span id="copyright">Template Monster</span>
+        </div>
+    </div>
+</footer>
+<div id="back-top">
+    <a href="#"><i class="icon-double-angle-up"></i></a>
+</div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2787305-5']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();	
+</script>
+
+</body>
+</html>

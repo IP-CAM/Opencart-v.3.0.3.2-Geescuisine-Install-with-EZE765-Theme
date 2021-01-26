@@ -1,0 +1,39 @@
+/*==================  Stuck menu  ======================*/
+
+$stuck-bg: #f5f5f5;
+
+.stuck-menu{
+	width: auto !important;
+	margin-bottom:18px;
+}
+.ajax-overlay-open .scroll-fix{
+	z-index: 996;
+}
+
+@media only screen and (min-width: 991px) {
+	.scroll-fix {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10000;
+		transition: .3s all ease;
+
+		// Custom styles
+		background: $stuck-bg;
+		padding: 10px 0;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+  .stuck-menu {
+    position: static;
+  }
+}
+/*=============== Responsive ====================*/
+
+@media (max-width: 767px) {
+	.stuck-menu {
+		margin-bottom:0;
+	}
+}

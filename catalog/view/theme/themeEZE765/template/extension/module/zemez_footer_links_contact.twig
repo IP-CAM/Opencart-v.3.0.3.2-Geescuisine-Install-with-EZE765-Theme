@@ -1,0 +1,11 @@
+<div class="box">
+	<h3 class="box-heading">{{ text_contacts }}</h3>
+	<div class="box-content footer_box">
+		<address>
+			<p><a class="footer-link" href="//www.google.com/maps/{{ geocode ? '?q=' ~ geocode|replace({' ' : '+'}) : null }}" target="_blank">{{address}}</a><br>
+				<a class="footer-link" href="callto:{{ telephone }}">{{ telephone }}</a><br>
+				<a href="mailto:{{ email }} ">{{ email }}</a></p>
+		</address>
+		<p>{{ open }}</p>
+	</div>
+</div>

@@ -1,0 +1,127 @@
+//--------------------------------------------------------------
+//                    NewsLetter Block
+//--------------------------------------------------------------
+
+.newsletter {
+  margin-bottom: 29px;
+  .box-heading {
+    display: none;
+  }
+  
+  .btn-primary {
+    padding: 18px 30px;
+    margin-top: 10px;
+    @media (min-width: 1200px) {
+      margin-top: 0;
+    }
+  }
+  button.btn-primary {
+    padding: 23px 30px 21px;
+  }
+  
+  p.newsletter-description {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 0;
+    font-family: $secondaryFontFamily;
+    color: $dark;
+  }
+  
+  .zemez-login-form {
+    display: inline-block;
+  }
+  
+  input {
+    width: 420px;
+    display: inline-block;
+    color: $baseColor;
+    font: 300 12px/16px $secondaryFontFamily;
+    background: #fff;
+    height: 64px;
+    border: 1px solid rgba(#000, .2);
+    margin: 0 16px 0 0;
+    padding-top: 20px;
+    padding-bottom: 18px;
+    &::-webkit-input-placeholder {
+      color: $baseColor;
+      opacity: 1;
+    }
+    &:-moz-placeholder {
+      color: $baseColor;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: $baseColor;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: $baseColor;
+      opacity: 1;
+    }
+  }
+}
+
+.homebuilder {
+  .newsletter {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    .box-content {
+      padding: 0;
+      text-align: center;
+      position: relative;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      position: relative;
+     
+      @media (min-width: 1200px) {
+        margin-top: -2px;
+      }
+    }
+    
+    .zemez-login-form {
+      display: block;
+    }
+    
+    input {
+      max-width: 418px;
+      width: 100%;
+      display: inline-block;
+      font: 300 12px/16px $baseFontFamily;
+      background: #fff;
+      padding: 20px 15px 18px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+  }
+}
+
+.newsletter {
+  .newsletter-error, .newsletter-success {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    line-height: 16px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    margin-top: 5px;
+    transition: .3s all ease;
+  }
+}
+
+.newsletter {
+  .newsletter-error {
+    color: #bc2029;
+  }
+  .newsletter-success {
+    color: #55C65E;
+  }
+}
+
+
+

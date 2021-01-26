@@ -1,0 +1,111 @@
+<div class="product-thumb transition  {% if product.options and product.options|length <= 2 %} {{ 'options' }} {% endif %}">
+	
+	{% if product.options and product.options|length <= 2 %}
+		{% include '/' ~ theme_path ~ '/template/product/_partials/product_options.twig' %}
+	{% endif %}
+	
+	<div class="image">
+		<a class="lazy" href="{{ product.href }}" style="padding-bottom: {{ product['img-height'] / product['img-width'] * 100 ~ '%' }}">
+			{% if product.additional_thumb %}
+				<img width="{{ product['img-width'] }}" height="{{ product['img-height'] }}" alt="{{ product['name'] }}" title="{{ product['name'] }}" class="img-primary" data-src="{{ product['thumb'] }}" src="#"/>
+				<img width="{{ product['img-width'] }}" height="{{ product['img-height'] }}" alt="{{ product['name'] }}" title="{{ product['name'] }}" class="img-secondary" data-src="{{ product['additional_thumb'] }}" src="#"/>
+			{% else %}
+				<img width="{{ product['img-width'] }}" height="{{ product['img-height'] }}" alt="{{ product['name'] }}" title="{{ product['name'] }}" class="img" data-src="{{ product['thumb'] }}" src="#"/>
+			{% endif %}
+		</a>
+		{% if product.special or product.label_new  or product.label_discount %}
+			<ul class="product-flags">
+				{% if (label_sale and product.special) and (label_discount and product.label_discount) %}
+					<li class="sale">
+						<span>{{ text_sale }}</span>
+						<span class="label-percent">{{ product.label_discount }}</span>
+					</li>
+				{% else %}
+					
+					{% if label_sale and product.special %}
+						<li class="sale">
+							<span>{{ text_sale }}</span>
+						</li>
+					{% endif %}
+					
+					{% if label_discount and product.label_discount %}
+						<li class="sale-percent">
+							<span>{{ product.label_discount }}</span>
+						</li>
+					{% endif %}
+					
+				{% endif %}
+				
+				{% if label_new and product.label_new %}
+					<li class="new-pr"><span>{{ text_new }}</span></li>
+				{% endif %}
+			</ul>
+		{% endif %}
+		
+		{% if (product.special and product_timers and product.date_end) %}
+			<ul class="product-countdown product-countdown_grid" data-date="{{ product.date_end }}">
+				<li class="cell days"><span class="number"></span>{{ days_title }}</li>
+				<li>{{ ':' }}</li>
+				<li class="cell hours"><span class="number"></span>{{ hours_title }}</li>
+				<li>{{ ':' }}</li>
+				<li class="cell minutes"><span class="number"></span>{{ minutes_title }}</li>
+				<li>{{ ':' }}</li>
+				<li class="cell seconds"><span class="number"></span>{{ seconds_title }}</li>
+			</ul>
+		{% endif %}
+	</div>
+	<div class="aside-content">
+		<div class="caption">
+			<div class="name"><a href="{{ product.href }}">{{ product.name }}</a></div>
+			{% if product.price %}
+				<div class="price">
+					{% if not product.special %}
+						{{ product.price }}
+					{% else %}
+						<span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+					{% endif %}
+					{% if product.tax %}
+						<span class="price-tax">{{ text_tax }} {{ product.tax }}</span>
+					{% endif %}
+				</div>
+			{% endif %}
+			<div class="description">{{ product.description }}</div>
+			
+			{% if product.rating %}
+				<p class="rating">
+					{% for i in 1..5 %}
+						{% if product.rating < i %}
+							<span class="fa fa-stack"><i class="fa fa-star-o"></i></span>
+						{% else %}
+							<span class="fa fa-stack"><i class="fa fa-star star"></i></span>
+						{% endif %}
+					{% endfor %}
+				</p>
+			{% endif %}
+			
+		</div>
+		<div class="cart-button">
+			<div class="btn-wrapper">
+				<button type="button" class="btn btn-default add-to-cart" data-toggle="tooltip" title="{{ button_cart }}" {% if (product.options|length > 3) %} onclick="cart.add('{{ product.product_id }}');" {% else %} onclick="ajaxAdd($(this),{{ product.product_id }});" {% endif %}><span>{{ button_cart }}</span></button>
+				<button class="btn btn-default quickview" data-toggle="tooltip" title="{{ text_quick }}" type="button" data-rel="details" data-product="{{ product['product_id'] }}"><span>{{ text_quick }}</span></button>
+			</div>
+			<div>
+				<button type="button" class="btn-icon" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="linearicons-heart"></i></button>
+				<button type="button" class="btn-icon" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="linearicons-repeat"></i></button>
+			</div>
+		</div>
+		{% if (product.special and product_timers and product.date_end) %}
+			<ul class="product-countdown product-countdown_list" data-date="{{ product.date_end }}">
+				<li class="cell days"><span class="number"></span>{{ days_title }}</li>
+				<li>{{ ':' }}</li>
+				<li class="cell hours"><span class="number"></span>{{ hours_title }}</li>
+				<li>{{ ':' }}</li>
+				<li class="cell minutes"><span class="number"></span>{{ minutes_title }}</li>
+				<li>{{ ':' }}</li>
+				<li class="cell seconds"><span class="number"></span>{{ seconds_title }}</li>
+			</ul>
+		{% endif %}
+	</div>
+</div>
+
+

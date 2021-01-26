@@ -1,0 +1,89 @@
+<div class="zemez-single-product-{{ module }} zemez-single-product">
+	<div class="container">
+		<div class="col-auto">
+			<div class="thumbnail-wrapper">
+				{% if product['add_imgs'] %}
+					<div class="gallery-top-{{ module }} swiper-container">
+						<div class="swiper-wrapper">
+							{% for img in product['add_imgs'] %}
+								<div class="swiper-slide">
+									<img src="{{ img[1] }}" alt=""/>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="thumbnails">
+						<div class="gallery-thumbs-{{ module }} swiper-container">
+							<div class="swiper-wrapper">
+								{% for img in product['add_imgs'] %}
+									<div class="swiper-slide">
+										<div class="swiper-slide-container">
+											<img width="{{ thumb_width }}" height="{{ thumb_height }}" alt="" src="{{ img[0] }}"/>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				{% else %}
+					<div class="main-image">
+						<img src="{{ product['image'] }}" alt=""/>
+					</div>
+				{% endif %}
+			</div>
+			<div class="caption">
+				<div class="name"><a href="{{ product.href }}">{{ product.name }}</a></div>
+				<div class="description">{{ product.description|striptags|slice(0, 170) }}...</div>
+				<a href="{{ product.href }}" class="btn btn-secondary btn-lg">
+					<span>
+						{{ button_cart }} -
+					</span>
+					{% if product.price %}
+						<p class="price mb-0">
+							{% if not product.special %}
+								{{ product.price }}
+							{% else %}
+								<span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+							{% endif %}
+							{% if product.tax %}
+								<span class="price-tax">{{ text_tax }} {{ product.tax }}</span>
+							{% endif %}
+						</p>
+					{% endif %}
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    $('.zemez-single-product-{{ module }}').each(function() {
+      var mainCarousel  = $('.gallery-top-{{ module }}');
+      var thumbCarousel = $('.gallery-thumbs-{{ module }}');
+      mainCarousel.each(function() {
+        var galleryTop               = new Swiper($(this), {
+          spaceBetween : 2,
+          loop         : true,
+          loopedSlides : 3,
+          grabCursor: true
+        });
+        var galleryThumbs            = new Swiper(thumbCarousel, {
+          centeredSlides      : true,
+          spaceBetween        : 10,
+          touchRatio          : 0.2,
+          slidesPerView       : 3,
+          slideToClickedSlide : true,
+          loop                : true,
+          loopedSlides        : 3
+        });
+        galleryTop.params.control    = galleryThumbs;
+        galleryThumbs.params.control = galleryTop;
+      });
+    });
+  });
+</script>
+
+

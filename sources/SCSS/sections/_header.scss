@@ -1,0 +1,335 @@
+$dropdown-bg: #f7f7f7;
+
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media (min-width: 1200px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .logo {
+    margin: 0;
+    &:after {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+  
+  h1.logo {
+    line-height: 18px;
+  }
+  
+  .search {
+    input[type=text] {
+      background: $input-bg;
+      &:not(:focus) {
+        box-shadow: none;
+        border-color: $white;
+      }
+    }
+    border-bottom: 2px solid $dark;
+  }
+  
+  #form-currency,
+  #form-language {
+    ul li {
+      display: inline-block;
+      i {
+        font-style: normal;
+      }
+      i + span {
+        display: none;
+      }
+    }
+  }
+  .icon-toggle {
+    font-size: 24px;
+    color: $dark;
+    min-width: 45px;
+    &.toggle {
+      span, strong {
+        display: none;
+      }
+    }
+    i + span, i + strong {
+      display: none;
+    }
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+  
+  #cart {
+    .icon-toggle.toggle {
+      i + span, span {
+        display: inline-block;
+        font-size: 0;
+        .total-quantity-item {
+          display: inline-block;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          background-color: $dark;
+          color: #fff;
+          font-size: 12px;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  
+  .custom-text {
+    p {
+      margin-bottom: 0;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      > em {
+        text-transform: none;
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 18px;
+        letter-spacing: normal;
+        font-style: normal;
+        color: $dark;
+        &:before {
+          content: '';
+          color: $dark;
+          width: 53px;
+          height: 1px;
+          background: $dark;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+}
+
+/*================  Premanent links ===============*/
+
+.permanent-links {
+  ul {
+    @include list-style-none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    li {
+      margin-right: 20px;
+    }
+    li a {
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: $dark;
+      &:hover, &:focus {
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+/*================  Toggle ===============*/
+.toggle-wrap {
+  position: relative;
+}
+
+.toggle-wrap {
+  .toggle_cont {
+    display: none;
+    background: $dropdown-bg;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 141px;
+    z-index: 20;
+    box-shadow: -2px 3px 11px -2px rgba(#868686, 0.3);
+    .toggle_cont__right {
+      right: auto;
+      left: 0;
+    }
+    .toggle_cont__modal {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1050;
+      display: none;
+      overflow-x: hidden;
+      overflow-y: auto;
+      outline: 0;
+      width: 270px;
+    }
+  }
+}
+
+/*================   Top Links Modal style   ===============*/
+
+.modal.modal-nav {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  
+  .modal-body {
+    > ul > li {
+      padding: 10px 0;
+      
+      + li {
+        border-top: 1px solid $black;
+      }
+    }
+    li {
+      > button {
+        text-align: left;
+        width: 100%;
+        display: block;
+        padding: 4px 9px 5px;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 1.2;
+        color: $baseColor;
+        border-bottom: 1px solid transparent;
+        &:hover, &:focus, &:active,
+        &.selected {
+          border-color: $secondary;
+          text-decoration: none;
+        }
+        
+        img {
+          margin: 2px 3px 0 0;
+          vertical-align: top;
+          display: none;
+        }
+      }
+      > a i {
+        font-size: 12px;
+        margin-right: 8px;
+      }
+    }
+  }
+  
+  .modal-content,
+  .modal-dialog {
+    height: 100%;
+  }
+  
+  .modal-content {
+    border-radius: 0;
+    border: none;
+  }
+  
+  .modal-dialog {
+    width: 270px;
+    margin: 0;
+    opacity: 0;
+    transition: .3s;
+    @media (min-width: 768px) {
+      width: 320px;
+    }
+  }
+  
+  .close {
+    float: none;
+    position: absolute;
+    padding: 10px;
+    color: #fff;
+    opacity: 1;
+    &:hover, &:focus {
+      color: $black;
+    }
+  }
+  
+  &.modal-nav-left {
+    button.close {
+      left: auto;
+      right: 0;
+    }
+    &.in {
+      .modal-dialog {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .modal-dialog {
+      transform: translateX(-320px);
+    }
+  }
+  
+  &.modal-nav-right {
+    button.close {
+      left: 0;
+      right: auto;
+    }
+    &.in {
+      .modal-dialog {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .modal-dialog {
+      margin-left: auto;
+      transform: translateX(320px);
+    }
+  }
+}
+
+/*========================================================
+               Responsive Header styles
+=========================================================*/
+
+@media (max-width: 1199px) {
+  .header-top {
+    .btn-wishlist span, .tx-open, .btn-compare span {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    .col-inner > span {
+      display: block;
+      margin-bottom: 5px;
+      text-align: right;
+    }
+    
+    .custom-sm-width .container {
+      max-width: 470px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    
+    .search {
+      float: none;
+    }
+    
+    .logo {
+      text-align: center;
+      margin: 0 0 6px;
+      img {
+        display: inline-block;
+      }
+    }
+    .box-cart {
+      float: none;
+      margin-top: 0;
+    }
+  }
+}
+

@@ -1,0 +1,130 @@
+/*========================================================
+							TM Promo Banner
+=========================================================*/
+
+[class*="promo-banner-"],
+.tm-promo-banner__countdown .time_circles {
+	position: relative;
+}
+.tm-promo-banner__close-btn,
+.tm-promo-banner__countdown .time_circles > div {
+	position: absolute;
+}
+[class*="promo-banner-"] {
+	padding: 0 35px;
+	display: none;
+}
+.tm-promo-banner {
+	color:#fff;
+	text-align:center;	
+	&__cont,
+	&__countdown .simple-countdown {
+		display: table;
+		table-layout: fixed;
+	}
+	&__description,
+	&__countdown,
+	&__countdown .simple-countdown .cell {
+		display: inline-block;
+		color:#fff;
+	}	
+	&__countdown {
+		padding-top:26px;
+		.cell {
+			padding-left:10px;
+			padding-right:10px;
+			font-size:12px;
+			text-transform:uppercase;
+			span {
+				font-size:30px;
+				font-weight:bold;
+			}
+		}
+	}
+	&__description {
+		display:inline-block;
+		width:100%;
+		text-align:center;
+		padding-bottom:30px;
+		h3 {
+			font-size:30px;
+			line-height:32px;
+			margin-bottom:17px;
+			font-weight:bold;
+			color:#fff;
+		}
+	}
+	&__image,
+	&__description,
+	&__countdown {
+		vertical-align: middle;
+	}
+	&__cont,
+	&__image img,
+	&__countdown .simple-countdown {
+		width: 100%;
+	}
+	&__image {
+		display: none;
+	}
+	&__countdown {
+		.simple-countdown .number,
+		.time_circles > div span {
+			display: block;
+		}
+		.simple-countdown,
+		.time_circles > div {
+			text-align: center;
+		}
+		.simple-countdown {
+			line-height: 1;
+		}
+	}
+}
+
+a.tm-promo-banner__close-btn {
+	&, &:visited {
+		color:rgba(#fff,.75);
+	}
+	&:hover, &:focus, &:active {
+		color: desaturate( adjust-hue( #f9c230, -18deg ), 1 );
+	}
+}
+
+/*================   Custom Layout&Styles   =====================*/
+.tm-promo-banner {	
+	&__countdown {
+		.simple-countdown {
+			color: #fff;
+			font-size: 20px;
+			.number {
+				font-size: 30px;
+				color: #fff;
+				padding-bottom:4px;
+			}
+		}
+	}
+	&__close-btn {
+		top: 5px;
+		right: 0;
+		font-size: 40px;
+		line-height: 40px;
+	}
+}
+
+//--------------------------------------------------------------
+//					TM Promo Banner Responsive Layout
+//--------------------------------------------------------------
+@media (max-width: 991px) {
+	[class*="promo-banner-"] {
+		display: none !important;
+	}
+}
+
+@media (min-width: 1200px) {
+	.tm-promo-banner {
+		&__image {
+			display: table-cell;
+		}
+	}
+}
