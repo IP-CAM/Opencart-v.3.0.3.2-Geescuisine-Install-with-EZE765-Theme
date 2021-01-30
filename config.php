@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'https://geescuisine.com/beta/');
+define('HTTP_SERVER', 'http://13.59.178.243/beta/geescuisine_opencart/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://geescuisine.com/beta/');
+define('HTTPS_SERVER', 'http://13.59.178.243/beta/geescuisine_opencart/');
 
 // DIR
 define('DIR_APPLICATION', '/var/www/html/beta/geescuisine_opencart/catalog/');
