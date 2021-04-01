@@ -334,7 +334,7 @@
 							<!-- Customize products -->
 								<div class="product-tags">
 									Need to customize this product ?
-									<a class="link" href="https://wa.me/919895838255&text=Hello, I need a customization on {{heading_title}}">Reach out to us</a>,
+									<a class="link" id="whatsappLink" href="">Reach out to Us</a>,
 										
 								</div>
 								
@@ -674,5 +674,10 @@
       }
     });
   });
+  
+  var txt = "Hello, I need a customization on {{ heading_title }}";
+  var txtencoded = encodeURIComponent(txt);
+  var link = `https://wa.me/919895838255?text=${txtencoded}`;
+  document.getElementById("whatsappLink").href = link;
 </script>
 {{ footer }}
