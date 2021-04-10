@@ -81,3 +81,11 @@ h6,.h6{font-size:1.71429em}@media (max-width: 1720px){h6,.h6{font-size:1.71429em
 }
 
 } 
+
+.homebuilder .blog_articles .article-sub-title {
+    padding: 10px 0;
+}
+
+.homebuilder .blog_articles .article-sub-title .article-date, .homebuilder .blog_articles .article-sub-title .article-comments, .homebuilder .blog_articles .article-sub-title .article-author {
+    padding: 1px 0;
+}
