@@ -81,3 +81,7 @@ h6,.h6{font-size:1.71429em}@media (max-width: 1720px){h6,.h6{font-size:1.71429em
 }
 
 } 
+.img-responsive.banner-img{
+    margin-top: -22px;
+}
+
