@@ -330,21 +330,14 @@
 								<button type="button" class="btn-icon" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product_id }}');"><i class="linearicons-heart"></i></button>
 								<button type="button" class="btn-icon" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product_id }}');"><i class="linearicons-repeat"></i></button>
 							</div>
-
-
-							{% if (tags) %}
-								<!-- Product tags -->
+							
+							<!-- Customize products -->
 								<div class="product-tags">
-									{{ text_tags }}
-									{% for i in 0..tags|length %}
-										{% if i < (tags|length - 1) %}
-											<a class="link" href="{{ tags[i].href }}">{{ tags[i].tag }}</a>,
-										{% else %}
-											<a class="link" href="{{ tags[i].href }}">{{ tags[i].tag }}</a>
-										{% endif %}
-									{% endfor %}
+									Need to customize this product ?
+									<a class="link" id="whatsappLink" href="">Reach out to Us</a>,
+										
 								</div>
-							{% endif %}
+								
 							<div class="product-share">
 								<!-- AddThis Button BEGIN -->
 								<div class="addthis_inline_share_toolbox"></div>
@@ -681,5 +674,10 @@
       }
     });
   });
+  
+  var txt = "Hello, I need a customization on {{ heading_title }}";
+  var txtencoded = encodeURIComponent(txt);
+  var link = `https://wa.me/919895838255?text=${txtencoded}`;
+  document.getElementById("whatsappLink").href = link;
 </script>
 {{ footer }}

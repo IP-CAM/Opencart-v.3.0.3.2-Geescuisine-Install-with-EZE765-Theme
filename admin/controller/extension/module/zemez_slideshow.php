@@ -59,8 +59,6 @@ class ControllerExtensionModuleZemezSlideshow extends Controller
         } else {
             $data['error_video_playback_rate'] = '';
         }
-
-
         $data['breadcrumbs'] = array();
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('text_home'),
