@@ -56,8 +56,8 @@ window.smartsupp||(function(d) {
 	{# end styles #}
 	{# rtl #}
 	{% if direction == 'rtl' %}
-		<link link rel="preload" as="style" href="catalog/view/theme/{{ theme_path }}/stylesheet/bootstrap-rtl.css" rel="stylesheet">
-		<link link rel="preload" as="style" href="catalog/view/theme/{{ theme_path }}/stylesheet/rtl.css" rel="stylesheet">
+		<link href="catalog/view/theme/{{ theme_path }}/stylesheet/bootstrap-rtl.css" rel="stylesheet">
+		<link href="catalog/view/theme/{{ theme_path }}/stylesheet/rtl.css" rel="stylesheet">
 	{% endif %}
 	{# end rtl #}
 	{% for style in styles %}
