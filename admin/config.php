@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://geescuisine.com/beta/geescuisine_opencart/admin/');
-define('HTTP_CATALOG', 'http://geescuisine.com/beta/geescuisine_opencart/');
+define('HTTP_SERVER', 'http://geescuisine.com/admin/');
+define('HTTP_CATALOG', 'http://geescuisine.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://geescuisine.com/beta/geescuisine_opencart/admin/');
-define('HTTPS_CATALOG', 'http://geescuisine.com/beta/geescuisine_opencart/');
+define('HTTPS_SERVER', 'http://geescuisine.com/admin/');
+define('HTTPS_CATALOG', 'http://geescuisine.com/');
 
 // DIR
 define('DIR_APPLICATION', '/var/www/html/beta/geescuisine_opencart/admin/');
