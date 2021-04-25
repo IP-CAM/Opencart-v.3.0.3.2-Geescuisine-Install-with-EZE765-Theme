@@ -1,4 +1,3 @@
-Opencart  - v. 2.2.0.0
 Bootstrap - v. 3.3.5
 
 foodleco_template_updated.zip - Updated template compatible with Opencart 2.2.x.x.
